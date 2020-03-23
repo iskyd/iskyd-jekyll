@@ -28,7 +28,7 @@ twitter_username: iskypitts
 github_username:  iskyd
 
 # Build settings
-theme: jekyll-theme-slate
+theme: minima
 plugins:
   - jekyll-paginate
   - jekyll-feed
