@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "The 51% Attack"
+description: "Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack. Cerchiamo quindi di capire come funziona questo attacco"
+date:   2018-10-15 12:50:56 +0100
+categories: Blockchain
+---
+Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack.  
+Cerchiamo quindi di capire come funziona questo "attacco".
+
+_Se volete fare un ripasso veloce sulla blockchain potete leggere [questo articolo](http://iskyd.it/i-bitcoin-non-sono-la-blockchain/)._
+
+Uno dei pilastri principali della blockchain è il protocollo di consenso.  
+Se qualcuno volesse modificare un blocco, oltre che modificare tutti i blocchi successivi (in quanto cambierebbe l'hash e quindi si romperebbe la chain), dovrebbe modificare la blockchain su più della metà dei nodi, o questi si accorgerebbero di una versione della blockchain diversa e farebbero un resync per riavere quella corretta.
+
+Questo sopra descritto però **non è il 51% attack**. **Quando parliamo del 51% attack non facciamo riferimento al 51% del numero dei nodi ma al 51% dell'hashrate totale.**
+
+Vediamo quindi come funziona.
+
+Supponiamo di avere un gruppo di miner che ha un hashrate pari a 1 Th/s. Questi aggiungerebbero normalmente i blocchi alla blockchain.  
+A questo punto un altro gruppo di miner malintenzionati con un totale di 1,1 Th/s decide di aggiungersi alla blockchain e quindi copiano l'attuale blockchain e iniziano a fare mining.  
+_Nell'esempio abbiamo il primo gruppo con 1Th/s e il secondo gruppo con 1,1 Th/s, ricordiamo basta avere il 51% della potenza totale._
+
+Una volta copiata la blockchain i nostri malintenzionati decidono di chiudere la connessione con il primo gruppo di miners.  
+Entrambi i gruppi continuano a minare ma quello che succede è che il gruppo di malintenzionati (avendo un hashrate maggiore) avrà sempre una blockchain più lunga rispetto al primo gruppo di miners.
+
+A questo punto i malintenzionati decidono di riaprire la connessione. Cosa succede?
+
+**La regola d'oro è: la blockchain più lunga vince.**
+
+Quindi tutti i blocchi che sono stati aggiunti dal primo gruppo di miners sarebbero considerati invalidi e tutte le transazioni al loro interno verrebbero rilasciate nuovamente all'interno della mempool e i miners iniziali sincronizzerebbero la blockchain con quella più lunga.
+
+Interessante, ma che vantaggio ne traggono i malintenzionati?
+
+Qui entra in gioco il **double spend problem**.
+
+I malintenzionati dall'inizio, non come miners, ma come nodi hanno acquistato dei beni. Questa transazione è stata quindi aggiunta a un blocco della blockchain del primo gruppo di miners (i miners malintenzionati non prendono dalla mempool questa transazione proprio per avvantaggiarsi del double spend problem).  
+Supponiamo che uno dei malintenzionati abbia acquistato un tacchino da combattimento per 0.5 BTC. Una volta che la transazione è considerata valida il malintenzionato riceve il suo tacchino da combattimento.
+
+Ecco quindi che quando il blocco in cui è presente la transazione viene considerato invalido questa transazione torna nella mempool, pronta per essere aggiunta a un nuovo blocco. Quindi il malintenzionato ha il suo tacchino da combattimento e la sua transazione è ancora nella mempool. Questo è il double spend problem in quanto quella transazione verrà spesa nuovamente.
+
+Nel protocollo bitcoin una transazione deve avere 6 conferme per essere considerata valida. Ogni blocco (compreso il blocco stesso dove è aggiunta la transazione) aggiunto alla blockchain dopo di lui è considerata una conferma. Una volta che la transazione ha ricevuto 6 conferme viene quindi considerata valida e sicura per il double spend problem.
+
+Torniamo quindi un secondo alla blockchain del primo gruppo di miners. Le transazioni contenute negli ultimi 5 blocchi, al momento del resync delle due blockchain, non hanno il problema del double spend in quando ancora non sono considerate valide perchè hanno meno di 6 conferme.
+
+### Conclusioni
+
+Abbiamo visto quindi che il 51% attack fa riferimento all'hashrate e non al numero di miners stessi. Al momento non c'è niente di illegale in questo attacco.
+
+E' improbabile che questo accada in blockchain come quella dei BTC o di altre criptovalute molto usate, ma può capitare per le criptovalute più "piccole".
+
+Un altro importante punto è che i miners traggono vantaggio sempre in quanto guadagnano le tasse di ogni transazione più il rewards per ogni blocco, quindi perchè truffare e far morire una criptovaluta quando si può guadagnare da essa?
+
+Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a **commentare qua sotto**!
