@@ -22,7 +22,7 @@ title: Isky – Musica e Tech
 email: careddumattia@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/iskyd-jekyll" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: iskypitts
 github_username:  iskyd
@@ -30,7 +30,6 @@ github_username:  iskyd
 # Build settings
 theme: minima
 plugins:
-  - jekyll-paginate
   - jekyll-feed
 
 # Exclude from processing.
