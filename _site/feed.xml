@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-23T17:34:43+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Isky – Musica e Tech</title><subtitle></subtitle><entry><title type="html">Intonazione e Temperamento</title><link href="http://localhost:4000/armonia/2019/09/10/51-intonazione-temperamento.html" rel="alternate" type="text/html" title="Intonazione e Temperamento" /><published>2019-09-10T15:16:45+02:00</published><updated>2019-09-10T15:16:45+02:00</updated><id>http://localhost:4000/armonia/2019/09/10/51-intonazione-temperamento</id><content type="html" xml:base="http://localhost:4000/armonia/2019/09/10/51-intonazione-temperamento.html">&lt;p&gt;Durante il corso della storia sono stati usati diversi sistemi di intonazione e temperamento, ognuno con le sue caratteristiche.&lt;/p&gt;
+
+&lt;p&gt;Partiamo da un’assunzione a cui sono arrivate tutte le civiltà, da oriente a occidente: una corda lunga 1/2 di un’altra corda, nelle stesse condizioni, produrrà un suono un’ottava più in alto (viceversa una corda lunga il doppio produrrà un suono un’ottava più in basso). &lt;/p&gt;
+
+&lt;p&gt;Questo, insieme all’unisono 1:1, rappresenta il nostro ratio di partenza, 2:1.&lt;/p&gt;
+
+&lt;p&gt;Il ratio più semplice dopo 2:1 è rappresentato da 3:2, quindi una corda lunga 2/3 di un’altra corda, nelle stesse condizioni, produrrà un suono una quinta perfetta più in alto.&lt;br /&gt;
+L’intervallo di quinta perfetta (3:2) è l’intervallo più consonante ed è per questo che è stato usato da Pitagora come intervallo generatore di tutta la scala.&lt;/p&gt;
+
+&lt;p&gt;Inoltre questi ratio semplici (generatori) rappresentano la tetractys (A dimostrazione dell’importanza che il simbolo aveva per Pitagora, la scuola portava questo nome e i suoi discepoli prestavano giuramento sulla tetraktys): 1:1 (unisono), 2:1 (ottava), 3:2 (quinta perfetta), 4:3 (quarta perfetta).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La scala pitagorica &lt;/strong&gt;nasceva quindi dalla successione di intervalli di quinta perfetta. Ipotizzando che la nostra nota di partenza abbia una frequenza di 220hz (A) generiamo la scala pitagorica: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;220 * 3/2 = 330 (questa frequenza rappresenta il E, quinta perfetta della nostra nota di partenza A)&lt;/li&gt;
+  &lt;li&gt;330 * 3/2 = 495 (essendo una frequenza superiore all’ottava lo dividiamo per due in modo da ottenere la stessa nota un’ottava più in basso, seguendo come abbiamo visto il ratio dell’ottava 2:1). 495/2 = 247,5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;e così via, ottenendo le seguenti frequenze:&lt;/p&gt;
+
+&lt;p&gt;220, 234.931640625, 247.5, 264.298095703125, 278.4375, 297.3353576660156, 313.2421875, 330.0, 352.3974609375, 371.25, 396.4471435546875, 417.65625&lt;/p&gt;
+
+&lt;p&gt;Ogni 12 intervalli di quinta ritorniamo all’ottava di partenza, quindi a una frequenza di 440hz ma in realtà seguendo la scala pitagorica non arriviamo esattamente a 440hz.&lt;br /&gt;
+Questa discrepanza è detta comma pitagorica.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;L’intonazione pura &lt;/strong&gt;(o &lt;strong&gt;just intonation&lt;/strong&gt;) è un’intonazione che si basa sulla successione naturale degli armonici. In questo modo quando due intervalli ad intonazione pura vengono suonati non si crea nessuna interferenza tra di loro.&lt;br /&gt;
+A differenza della scala pitagorica vengono definiti i ratio di altri due intervallo, la terza maggiore a 5/4 e la terza minore a 6/5. Le altre note vengono trovate dalla differenza con questi ratio già definiti ottenendo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unisono: 1&lt;/li&gt;
+  &lt;li&gt;seconda maggiore: 9/8&lt;/li&gt;
+  &lt;li&gt;terza maggiore: 5/4&lt;/li&gt;
+  &lt;li&gt;quarta giusta: 4/3&lt;/li&gt;
+  &lt;li&gt;quinta giusta: 3/2&lt;/li&gt;
+  &lt;li&gt;sesta maggiore: 5/3&lt;/li&gt;
+  &lt;li&gt;settima maggiore: 15/8&lt;/li&gt;
+  &lt;li&gt;ottava: 2/1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prendendo come fondamentale sempre la frequenza di 220 (A) queste sono le frequenze che formano gli intervalli sopra indicati:&lt;/p&gt;
+
+&lt;p&gt;[220.0, 247.5, 275.0, 293.3333333333333, 330.0, 366.6666666666667, 412.5, 440.0]&lt;/p&gt;
+
+&lt;p&gt;In musica la distanza tra due intervalli si misura in &lt;strong&gt;cent&lt;/strong&gt;. Il cent è la 1200esima parte di un’ottava. Questa misura deriva dal temperamento equabile in cui ci sono 12 semitoni con la stessa distanza, una distanza di 100 cent (1200 / 12).&lt;br /&gt;
+Per trovare la distanza in cent tra due intervalli possiamo applicare la seguente formula: 1200 * log2(f2 / f1), dove f2 e f1 sono le due frequenze e f2 &amp;gt; f1.&lt;/p&gt;
+
+&lt;p&gt;Proviamo a calcolare ora la differenza in cent tra le frequenze della scala pitagorica e dell’intonazione pura.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;intonazione pura 220.0 - scala pitagorica 220 = 0.0 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 247.5 - scala pitagorica 247.5 = 0.0 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 275.0 - scala pitagorica 278.4375 = 21.50628959671478 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 293.3333333333333 - scala pitagorica 297.3353576660156 = 23.460010384649014 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 330.0 - scala pitagorica 330.0 = 0.0 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 366.6666666666667 - scala pitagorica 371.25 = 21.50628959671478 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 412.5 - scala pitagorica 417.65625 = 21.50628959671478 cents&lt;/li&gt;
+  &lt;li&gt;intonazione pura 440.0 - scala pitagorica 440 = 0.0 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In questo modo possiamo vedere le differenze e le analogie tra i due tipi di intonazione.&lt;br /&gt;
+In particolare la terza maggiore risulta essere più larga nella scala pitagorica rispetto all’intonazione pura. Questo viene spesso sottolineato come problema in quanto l’intervallo di terza maggiore è un intervallo fondamentale e non può essere dissonante (una dissonanza che ormai siamo abituati a sentire visto che anche nel temepramento equabile la terza risulta più grande).&lt;/p&gt;
+
+&lt;p&gt;Andiamo più nel dettaglio, analizziamo la distanza di tono che troviamo tra tutti gli intervalli di seconda maggiore nella just intonation (A-B, B-C#, D-E….):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;root - 2nd: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+  &lt;li&gt;2nd - 3rd: 1.1111111111111112 = 182.40371213406007 cents&lt;/li&gt;
+  &lt;li&gt;4th - 5th: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+  &lt;li&gt;5th - 6th: 1.1111111111111112 = 182.40371213406007 cents&lt;/li&gt;
+  &lt;li&gt;6th - 7th: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Come possiamo vedere abbiamo due diversi tipi di tono, uno con distanza 203.9 cents e uno con una distanza di 182.4 cents.&lt;br /&gt;
+Questo è il motivo per cui l’intonazione pura è limitato a una sola tonalità (e neanche all’interno della stessa tonalità, ma lo vedremo più avanti). Prendiamo ad esempio il 5 grado della scala (E) che ha una frequenza di 330hz e calcoliamo il suo secondo grado (F#) attraverso il ratio visto precedentemente: 371.25hz.&lt;br /&gt;
+Possiamo quindi notare che il F# come sesto grado di A ha una frequenza di 366.6hz mentre come secondo gradi di A ha una frequenza di 371.25hz.&lt;/p&gt;
+
+&lt;p&gt;Questo è un grosso problema per gli strumenti ad intonazione fissa come il pianoforte, che dovrebbe riaccordarsi ad ogni cambio di tonalità. Un discorso a parte va invece fatto per gli strumenti senza intonazione fissa come ad esempio gli archi (violino ecc..) o la voce. Loro possono mantenere la corretta intonazione in base alla tonalità senza doversi riaccordare, e potrebbero anche variare l’intonazione all’interno dello stesso brano nel caso di più tonalità.&lt;/p&gt;
+
+&lt;p&gt;A questo punto possiamo affermare che abbiamo due tipi di tono:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tono maggiore: 9/8&lt;/li&gt;
+  &lt;li&gt;Tono minore: 10/9&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Per quanto riguarda i semitoni invece si trovano alla stessa distanza:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3rd - 4th: 1.0666666666666667 = 111.73128526977776 cents&lt;/li&gt;
+  &lt;li&gt;7th - 8th: 1.0666666666666667 = 111.73128526977776 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Come anticipato precedentemente con l’intonazione pura non possiamo neanche ottenere tutti gli accordi con intervalli puri neanche all’interno della stessa tonalità.&lt;br /&gt;
+Prendiamo ad esempio il D (293.3333333333333hz) e il F (352hz). Dovrebbero avere un ratio di 6/5 come abbiamo visto precedentemente mentre vediamo che differisce da una terza minore pura di 21,51 cents:&lt;/p&gt;
+
+&lt;p&gt;1200 *  log2(352 / 293.3333333333333) = 294.13499740383764&lt;br /&gt;
+1200 *  log2(6/5) = 294.13499740383764 = 21,51&lt;/p&gt;
+
+&lt;p&gt;Analizziamo ora la distanza tra gli intervalli di tono e semitono per la scala pitagorica come fatto per la scala pura:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;root - 2nd: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+  &lt;li&gt;2nd - 3rd: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+  &lt;li&gt;4th - 5th: 1.1098579146132872 = 180.44999134612573 cents&lt;/li&gt;
+  &lt;li&gt;5th - 6th: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+  &lt;li&gt;6th - 7th: 1.125 = 203.91000173077484 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tutti gli intervalli di seconda maggiore hanno la stessa distanza ad eccenzione dell’intervallo che si forma tra il quarto e il quinto grado che è più piccolo di 23cents.&lt;/p&gt;
+
+&lt;p&gt;Anche gli intervalli di semitono risultano differenti:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3rd - 4th: 1.06787109375 = 113.68500605771193 cents&lt;/li&gt;
+  &lt;li&gt;7th - 8th: 1.0534979423868314 = 90.22499567306306 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Per ovviare ai problemi visti con l’intonazione pura (dover riaccordare per ogni differente tonalità e impossibilità di avere accordi puri anche all’interno della stessa tonalità) e con la scala pitagorica (wolf fifth e terza maggiore più grande dell’intervallo puro) sono stati adottati dei &lt;strong&gt;temperamenti&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Il &lt;strong&gt;temperamento &lt;/strong&gt;è un sistema usato per modificare gli intervalli in modo da ottenere un’intonazione “migliore”, come ad esempio il &lt;strong&gt;temperamento equabile &lt;/strong&gt;o il &lt;strong&gt;meantone temperament.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Il &lt;strong&gt;temperamento meantone &lt;/strong&gt;è un temperamento in cui vengono modificate le quinte per migliorare le terze (per risolvere il problema della scala pitagorica).&lt;br /&gt;
+Il temperamento meantone più famoso è il quarter comma meantone in cui le quinte vengono modificate di 1/4 del syntonic comma (differenza tra l’intervallo di terza puro e quello della scala pitagorica). Il syntonic comma corrisponde  a 21,5 cents.&lt;/p&gt;
+
+&lt;p&gt;Quattro intervalli di quinta formano un intervallo di terza maggiore: &lt;strong&gt;A&lt;/strong&gt; - E - B - F# - &lt;strong&gt;C#&lt;/strong&gt;&lt;br /&gt;
+Ma come abbiamo visto prima nella scala pitagorica questo intervallo non è puro, ma modificando ogni quinta di 1/4 del syntonic comma (in modo da “spalmare” questa differenza su tutte le quinte e non su una soltanto, rendendola inutilizzabile), otteniamo un intervallo di terza maggiore puro.&lt;/p&gt;
+
+&lt;p&gt;A questo punto l’intervallo di quinta non sarà più puro ma sarà più piccolo, infatti sottraiamo da ogni quinta 1/4 del syntonic comma:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Intervallo di quinta nell’intonazione pura: 701.9 cents&lt;/li&gt;
+  &lt;li&gt;intervallo di quinta nel quarter comma meantone: 696.5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vediamo ora tutte e 12 le note che formano la scala cromatica con il quarter comma meantone partendo da una frequenza di 220hz (A)&lt;/p&gt;
+
+&lt;p&gt;220, 229.87947983564504, 245.96747752497689, 257.0130717723972, 275.0, 287.34934979455625, 307.45934690622107, 328.97673186866854, 343.74999999999994, 367.80716773703216, 384.3241836327762, 411.22091483583563, 440&lt;/p&gt;
+
+&lt;p&gt;Il calcolo per ottenerle è molto semplice, come per la scala pitagorica procediamo per una successione di quinte a cui sottraiamo 1/4 del syntonic comma:&lt;br /&gt;
+220 x ((3/2) / ((81/80) ^ 1/4) dove:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;220 rappresenta la frequenza di partenza&lt;/li&gt;
+  &lt;li&gt;81/80 rappresenta il syntonic comma&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Questa è la distanza in cents di tutte le note della scala cromatica nel meantone temperament:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;minor second: 76.04899926346074 cents&lt;/li&gt;
+  &lt;li&gt;major second: 193.15685693241682 cents&lt;/li&gt;
+  &lt;li&gt;minor third: 269.20585619587797 cents&lt;/li&gt;
+  &lt;li&gt;major third: 386.3137138648348 cents&lt;/li&gt;
+  &lt;li&gt;perfect fourth: 462.36271312829524 cents&lt;/li&gt;
+  &lt;li&gt;augmented fourth / diminished fifth: 579.4705707972521 cents&lt;/li&gt;
+  &lt;li&gt;perfect fifth: 696.578428466209 cents&lt;/li&gt;
+  &lt;li&gt;minor sixth: 772.6274277296694 cents&lt;/li&gt;
+  &lt;li&gt;major sixth: 889.7352853986264 cents&lt;/li&gt;
+  &lt;li&gt;minor seventh: 965.7842846620863 cents&lt;/li&gt;
+  &lt;li&gt;major seventh: 1082.8921423310435 cents&lt;/li&gt;
+  &lt;li&gt;octave: 1200.0 cents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La distanza di tono in tutti i meantone temperament (da qui il nome meantone, mean = media) è esattamente la metà di una terza maggiore.&lt;br /&gt;
+Inoltre, solo per il quarter comma meantone, il tono corrisponde alla media tra il tono maggiore è il tono minore dell’intonazione pura.&lt;/p&gt;
+
+&lt;p&gt;Come per la scala pitagorica anche in questo caso ogni 12 quinte non ritorniamo perfettamente sull’ottava e si crea quindi l’intervallo chiamato &lt;strong&gt;wolf fifth&lt;/strong&gt; tra il quarto e l’ottavo grado. La distanza di tutte le quinte è di 696 cents tranne tra il quarto e l’ottavo grado che corrisponde a 737.6 cents, troppo ampio per essere utilizzato.&lt;/p&gt;
+
+&lt;p&gt;Per migliorare l’intervallo di quinta esistono altri temperamenti in cui il syntonic comma viene suddiviso su 5 o 6 quinte (invece che su 4 come nel meantone), senza però più avere una terza maggiore completamente pura, ma comunque accettabile. Esistono infatti altri temperamenti come il &lt;strong&gt;1/5 comma meantone&lt;/strong&gt; e &lt;strong&gt;1/6 comma meantone&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Il sistema è identico al precendete, ma la suddivisione avviene su più quinte, vediamo velocemente come sarebbe il 1/6 comma meantone:&lt;/p&gt;
+
+&lt;p&gt;220, 231.55134483348976, 246.47726106064405, 259.41882395212394, 276.1410919088949, 290.64018725133144, 309.37499999999994, 329.31746820763, 346.6086483665306, 368.9512162874653, 388.32341049688335, 413.35493297967145, 440&lt;/p&gt;
+
+&lt;p&gt;Come vediamo la terza maggiore non è più pura (275) ma molto vicino (276,1), mentre l’intervallo di quinta (329.3) è molto più vicino all’intervallo di quinta puro (330).&lt;/p&gt;
+
+&lt;p&gt;Tutti questi temperamenti sono detti temperamenti regolari in quanto tutte le quinte vengono temperate nello stesso modo.&lt;br /&gt;
+Esistono altri temperamenti detti irregolari in cui le quinte vengono modificate di un valore differente. Questo veniva fatto ad esempio per evitare il wolf fifth che si crea nel quarter comma meantone. Un esempio di temperamento irregolare è il temperamento di Vallotti che vedremo magari in un altro articolo.&lt;/p&gt;
+
+&lt;p&gt;Il &lt;strong&gt;temperamento equabile &lt;/strong&gt;è un temperamento che si bassa sulla divisione dell’ottava in 12 intervalli uguali tra loro. Questo è il temperamento senza dubbio più utilizzato e conosciuto al giorno d’oggi (ma non nel passato! molti musicisti, tra cui Mozart, utilizzavano altri sistemi di intonazione nonostante il temperamento equabile fosse conosciuto anche all’epoca).&lt;/p&gt;
+
+&lt;p&gt;Nel temperamento equabile abbiamo quindi 12 note a distanza di 100 cents l’una dall’altra.&lt;br /&gt;
+Vediamo le frequenze partendo come sempre dalla fondamentale a 220hz (A):&lt;/p&gt;
+
+&lt;p&gt;220.00, 233.08, 246.94, 261.63, 277.18, 293.66, 311.13, 329.63, 349.23, 369.99, 392.00, 415.30, 440.00&lt;/p&gt;
+
+&lt;p&gt;Vediamo subito le due note principali, la terza maggiore che ha una frequenza di 277,1 hz a differenza dell’intervallo puro a 275hz e la quinta giusta he ha una frequenza di 329,62hz a differenza dell’intervallo puro a 330hz.&lt;/p&gt;
+
+&lt;p&gt;Il principale vantaggio, che ha portato il temperamento equabile ad essere il più usato, è che può essere utilizzato in tutte le tonalità senza doversi riaccordare (intonazione pura) e senza avere problemi di intervalli inutilizzabili, come il wolf fifth (scala pitagorica e meantone temperament).&lt;/p&gt;
+
+&lt;p&gt;In tutti i sistemi precedentemente visti abbiamo sempre parlato di una divisione dell’ottava in 12 note, ma non sempre è così.&lt;br /&gt;
+Come abbiamo visto all’interno del meantone temperament abbiamo due differenze distanze di semitono.&lt;br /&gt;
+Il sistema del meantone temperament esteso consente di avere entrambi i semitoni, quindi gli equivalenti armonici A# e Bb risultano essere due note differenti.&lt;br /&gt;
+Queste intonazioni sono però possibili su strumenti che possono modificare l’intonazione in base all’armonia (come il violino).&lt;br /&gt;
+Nel corso della storia abbiamo evidenza che questi intervalli venivano considerati come due note differenti, infatti in molte diteggiature per violino vediamo indicate entrambe le note. Anche Mozart, nei suoi scritti, fa riferimento al “mezzo tuono grande” (semitono maggiore) e al “mezzo tuono piccolo” (semitono minore).&lt;br /&gt;
+Questi sono anche chiamati semitono cromatico (G - G#) e semitono diatonico (A - Ab).&lt;/p&gt;
+
+&lt;p&gt;Una divisione particolarmente famosa è la &lt;strong&gt;divisione di Tosi&lt;/strong&gt; in cui l’ottava viene divisa in 55 parti. Ogni tono è formato da 9 parti (comma). 5 parti formano il semitono maggiore, mentre 4 parti il semitono minore.&lt;/p&gt;
+
+&lt;p&gt;Quelli che abbiamo visto oggi sono i principali temperamenti (intonazione pura e scala pitagorica non sono considerati temperamenti in quanto non modificano nessuna nota) utilizzati nel corso della storia fino ad oggi. Ne esistono ovviamente altri, come ad esempio il citato temperamento di Vallotti.&lt;br /&gt;
+E’ importante capire come funzionano e sentire le differenze tra loro in modo da fare una scelta su quale si adatta meglio alle nostre esigenze.&lt;br /&gt;
+Al giorno d’oggi sembra non esserci neanche la considerazione di cosa ci sia al di fuori del temperamenti equabile, ma è proprio oggi che possiamo utilizzare senza sforzo molti altri sistemi. Infatti grazie alla tecnologia possiamo riaccordare il pianoforte digitale con un solo click, o possiamo direttamente specificare la frequenza che vogliamo per un singolo suono, creando un temperamento irregolare in base alle nostre esigenze.&lt;/p&gt;
+
+&lt;p&gt;Vi consiglio molto il libro “How Equal Temperament Ruined Harmony: And Why You Should Care” di Ross W. Duffin in cui, oltre a spiegare i vari temperamenti, spiega anche il loro uso nel corso della storia, secondo me molto interessante e illuminante.&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">Durante il corso della storia sono stati usati diversi sistemi di intonazione e temperamento, ognuno con le sue caratteristiche.</summary></entry><entry><title type="html">Maqam Arabo - Introduzione</title><link href="http://localhost:4000/armonia/2019/05/29/51-maqam-arabo-intro.html" rel="alternate" type="text/html" title="Maqam Arabo - Introduzione" /><published>2019-05-29T08:11:56+02:00</published><updated>2019-05-29T08:11:56+02:00</updated><id>http://localhost:4000/armonia/2019/05/29/51-maqam-arabo-intro</id><content type="html" xml:base="http://localhost:4000/armonia/2019/05/29/51-maqam-arabo-intro.html">&lt;p&gt;Il maqam arabo è un insieme di scale, frasi melodiche e modulazioni che formano una struttura melodica. Ogni maqam è quindi formato dall’insieme di due (talvolta tre) scale o blocchi melodici, chiamati Jins.&lt;/p&gt;
+
+&lt;h2 id=&quot;jins&quot;&gt;Jins&lt;/h2&gt;
+
+&lt;p&gt;Il Jins è un frammento di scala, solitamente composto da 3, 4 o 5 note, formato da intervalli che, non cambiando quando vengono trasposti (come siamo abituati, la scala maggiore ha la stessa successione di intervalli che sia essa in C o in D), hanno il loro carattere distintivo.&lt;/p&gt;
+
+&lt;p&gt;Un Jins ha due note principali: la &lt;strong&gt;tonica&lt;/strong&gt; e il &lt;strong&gt;ghammaz&lt;/strong&gt;.&lt;br /&gt;
+La &lt;strong&gt;tonica&lt;/strong&gt; è la nota fondamentale di un Jins, la sua risoluzione, ed è solitamente la sua prima nota.&lt;br /&gt;
+Il &lt;strong&gt;ghammaz&lt;/strong&gt; invece è il punto di modulazione, da cui partirà il prossimo Jins, e coincide spesso con l’ultima nota del Jins (o la tonica nel nuovo Jins).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/hijaz.png&quot; alt=&quot;Jins Hijaz&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nell’immagine qua sopra (presa da &lt;a href=&quot;https://www.maqamworld.com&quot;&gt;maqamworld&lt;/a&gt;) potete vedere un esempio di Jins, in particolare il Jins Hijaz formato da 4 note ad un intervallo di semitono.&lt;br /&gt;
+Il D rappresenta la tonica del Jins mentre il G rappresenta il ghammaz.&lt;/p&gt;
+
+&lt;p&gt;Le note comprese tra la tonica e il ghammaz è chiamato Jins’ basic mentre le altre note (da entrambi i lati) sono definite Jins’ baggage.&lt;br /&gt;
+Il Jins’ esteso (Jins’ extended scale) è formato dall’insieme del Jins’ baggage e del Jins’ basic&lt;br /&gt;
+Un’altra nota importante per il Jins è il leading tone che è la nota precedente la tonica (nell’esempio sopra il C).&lt;/p&gt;
+
+&lt;h2 id=&quot;maqam&quot;&gt;Maqam&lt;/h2&gt;
+
+&lt;p&gt;Come abbiamo detto all’inizio il maqam è formato dall’insieme di due o tre Jins, da cui prende il comportamento melodico.&lt;br /&gt;
+Il primo Jins inizia dal primo grado del maqam ed ha quindi un ruolo fondamentale nella definizione del carattere di quel maqam.&lt;br /&gt;
+Se all’interno del maqam abbiamo più di due Jins avremo più ghammaz, da cui ognuno partirà il successivo Jins, all’interno del maqam.&lt;/p&gt;
+
+&lt;p&gt;I maqamat (plurale di maqam) vengono suddivisi in famiglie in base al loro primo Jins. Il maqam più comune all’interno della famiglia viene solitamente chiamato con il nome del primo Jins mentre gli altri vengono definiti branch Jins.&lt;/p&gt;
+
+&lt;p&gt;Le famiglie principali dei Maqam sono:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Maqam Ajam Family&lt;/li&gt;
+  &lt;li&gt;Maqam Bayati Family&lt;/li&gt;
+  &lt;li&gt;Maqam Hijaz Family&lt;/li&gt;
+  &lt;li&gt;Maqam Kurd Family&lt;/li&gt;
+  &lt;li&gt;Maqam Nahawand Family&lt;/li&gt;
+  &lt;li&gt;Maqam Nikzir Family&lt;/li&gt;
+  &lt;li&gt;Maqam Rast Family&lt;/li&gt;
+  &lt;li&gt;Maqam Sikah Family&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ad esempio all’interno della famiglia del Maqam Ajam abbiamo tre differenti maqam. Il Maqam Ajam, come abbiamo visto prima, prende il nome dal primo Jins (Jins Ajam) gli altri due invece (che sono i branch) sono il Maqam ‘Ajam ‘Ushayran e il Maqam Shawq Afza.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/maqam_ajam.png&quot; alt=&quot;Maqam Ajam&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nell’immagine sopra (sempre presa dal fantastico &lt;a href=&quot;https://www.maqamworld.com&quot;&gt;maqamworld&lt;/a&gt;) potete vedere il Maqam Ajam. E’ formato da 3 differenti Jins: il Jins Ajam (il Jins principale, da cui prende il nome) il Jins Upper Ajam e il Jins Nahawand. Come abbiamo detto precedentemente in questo caso, essendo il Maqam Ajam formato da tre Jins, abbiamo 2 ghammaz (il G e il C).&lt;/p&gt;
+
+&lt;p&gt;Alcuni Maqam non condivido il primo Jins con nessun altro Maqam e per questo non entrano a far parte di nessuna famiglia:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Maqam Jiharkah&lt;/li&gt;
+  &lt;li&gt;Maqam Lami&lt;/li&gt;
+  &lt;li&gt;Maqam Saba&lt;/li&gt;
+  &lt;li&gt;Maqam Saba Zamzam&lt;/li&gt;
+  &lt;li&gt;Maqam Sikah Baladi&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusione&quot;&gt;Conclusione&lt;/h2&gt;
+
+&lt;p&gt;In questo articolo abbiamo visto i due concetti principali del Maqam arabo: il &lt;strong&gt;Maqam&lt;/strong&gt; e il &lt;strong&gt;Jins.&lt;/strong&gt;&lt;br /&gt;
+Questo articolo è solo un’introduzione a questo mondo che ci servirà per poter approfondire successivamente ulteriori aspetti armonici e melodici di questa musica.&lt;/p&gt;
+
+&lt;p&gt;Nel frattempo vi consiglio due ottimi siti in cui potrete trovare tantissime informazioni e in cui approfondire l’ascolto: &lt;a href=&quot;https://www.maqamworld.com/&quot;&gt;https://www.maqamworld.com&lt;/a&gt; e &lt;a href=&quot;http://maqamlessons.com/&quot;&gt;http://maqamlessons.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">Il maqam arabo è un insieme di scale, frasi melodiche e modulazioni che formano una struttura melodica. Ogni maqam è quindi formato dall’insieme di due (talvolta tre) scale o blocchi melodici, chiamati Jins.</summary></entry><entry><title type="html">Armonia - Le sostituzioni</title><link href="http://localhost:4000/armonia/2019/05/15/51-armonia-sostituzioni.html" rel="alternate" type="text/html" title="Armonia - Le sostituzioni" /><published>2019-05-15T21:06:30+02:00</published><updated>2019-05-15T21:06:30+02:00</updated><id>http://localhost:4000/armonia/2019/05/15/51-armonia-sostituzioni</id><content type="html" xml:base="http://localhost:4000/armonia/2019/05/15/51-armonia-sostituzioni.html">&lt;p&gt;All’interno di un brano vengono spesso applicate della sostituzioni agli accordi per modificare il colore/movimento armonico, mantenendo la tensione ricercata.&lt;br /&gt;
+Possiamo dividere le sostituzioni in due gruppi principali, &lt;strong&gt;diatoniche&lt;/strong&gt; e &lt;strong&gt;cromatiche&lt;/strong&gt;. Le sostituzioni diatoniche hanno all’interno del nuovo accordo note tutte appartenenti alla tonalità in cui siamo, viceversa nelle sostituzioni cromatiche troveremo note al di fuori della tonalità.&lt;br /&gt;
+Le principali sostituzioni che possiamo trovare, e che oggi analizzeremo, sono:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sostituzione primaria&lt;/li&gt;
+  &lt;li&gt;Dominante secondaria&lt;/li&gt;
+  &lt;li&gt;Dominante cromatica(sostituzione a tritono)&lt;/li&gt;
+  &lt;li&gt;Accordo relativo (accordo diminuito)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sostituzione-primaria&quot;&gt;Sostituzione primaria&lt;/h2&gt;
+
+&lt;p&gt;La sostituzione primaria è l’unica sostituzione diatonica che vedremo nell’articolo di oggi.&lt;br /&gt;
+Armonizzando il I, IV e V grado ci accorgiamo che troviamo in questi tre accordi tutte le note che formano la scala maggiore della tonalità in cui siamo.&lt;br /&gt;
+Per semplicità tutti gli esempi saranno in C maggiore. Armonizziamo quindi questi 3 gradi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C - E - G - B&lt;/li&gt;
+  &lt;li&gt;F - A - C - E&lt;/li&gt;
+  &lt;li&gt;G - B - D - F&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Come anticipato in questi accordi troviamo tutte le note che fanno parte della tonalità in cui siamo. Possiamo quindi dire che questi tre gradi sono gli accordi principali.&lt;br /&gt;
+Possiamo quindi raggruppare i gradi della scala maggiore all’interno di questi tre gruppi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gruppo della tonica&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gruppo della sottodominante&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gruppo della dominante&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All’interno di ogni gruppo troviamo degli accordi secondari che hanno delle relazioni con degli accordi primari, in base alla quantità di note in comune che hanno.&lt;/p&gt;
+
+&lt;h3 id=&quot;gruppo-della-tonica&quot;&gt;&lt;strong&gt;Gruppo della tonica&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Il gruppo della tonica è formato dal I (tonica), dal III (mediante) e da VI (sopradominante) grado. In C maggiore quindi il gruppo della tonica è formato dai seguenti accordi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C - E - G - B&lt;/li&gt;
+  &lt;li&gt;E - G - B - D&lt;/li&gt;
+  &lt;li&gt;A - C - E - G&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Come possiamo vedere ci sono molte note in comune. Ad esempio l’accordo di E minore può anche essere visto con un C maggiore senza fondamentale con la 9 (il D).&lt;br /&gt;
+Allo stesso modo il A minore può essere visto come un C sesta.&lt;br /&gt;
+Per questo motivo il C maggiore può essere sostituito da questi due accordi con quella che viene definita sostituzione primaria.&lt;br /&gt;
+Questo principio viene applicato per tutti gli altri gruppi&lt;/p&gt;
+
+&lt;h3 id=&quot;gruppo-della-sottodominante&quot;&gt;&lt;strong&gt;Gruppo della sottodominante&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Il gruppo della sottodominante è formato dal II (sopratonica) e dal IV (sottodominante) grado. In C maggiore:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;D - F - A - C&lt;/li&gt;
+  &lt;li&gt;F - A - C - E&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Possiamo notare come il D minore può essere visto come un F sesta.&lt;/p&gt;
+
+&lt;h3 id=&quot;gruppo-della-dominante&quot;&gt;&lt;strong&gt;Gruppo della dominante&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;Il gruppo della dominante è formato dal V (dominante) e dal VII (sensibile) grado. In C maggiore:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;G - B - D - F&lt;/li&gt;
+  &lt;li&gt;B - D - F - A&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Anche in questo caso possiamo notare che il B può essere considerato un G senza fondamentale con la 9 (il A).&lt;/p&gt;
+
+&lt;p&gt;All’interno di ogni gruppo gli accordi possono essere sostituiti tra loro in modo diatonico creando quella che viene definita sostituzione primaria.&lt;/p&gt;
+
+&lt;h2 id=&quot;dominante-secondaria&quot;&gt;Dominante secondaria&lt;/h2&gt;
+
+&lt;p&gt;Una dominante secondaria è un accordo di dominante che determina una modulazione passeggera ad un grado diverso da quello della tonalità principale.&lt;/p&gt;
+
+&lt;p&gt;Queste dominanti sono chiamate secondarie perchè non vengono percepite come una vera e propria modulazione in quanto tornano all’istante alla tonalità originale.&lt;/p&gt;
+
+&lt;p&gt;Vediamo ora le caratteristiche comuni delle dominanti secondarie:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Non sono diatoniche. Al loro interno c’è almeno una nota che non fa parte della tonalità originale.&lt;/li&gt;
+  &lt;li&gt;Risolvono una quinta sotto su un accordo della tonalità originale.&lt;/li&gt;
+  &lt;li&gt;La fondamentale deve appartenere alla tonalità principale.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prendiamo subito in esame la seconda caratteristica, risolvono una quinta sotto un accordo della tonalità originale. Per assicurarci che questa caratteristica sia rispettata effettuiamo l’inverso, ovvero da ogni grado della tonalità principale troviamo la sua quinta giusta in modo da considerare &lt;strong&gt;ogni nota del modo come una fondamentale.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dm7 -&amp;gt; A7&lt;/li&gt;
+  &lt;li&gt;Em7 -&amp;gt; B7&lt;/li&gt;
+  &lt;li&gt;Fmaj7 -&amp;gt; C7&lt;/li&gt;
+  &lt;li&gt;G7 -&amp;gt; D7&lt;/li&gt;
+  &lt;li&gt;Am7 -&amp;gt; E7&lt;/li&gt;
+  &lt;li&gt;Bm7b5 (semidiminuito) -&amp;gt; F#7&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Essendo ora sicuri che la seconda caratteristica è rispettata passiamo a verificare le altre due.&lt;/p&gt;
+
+&lt;p&gt;E’ evidente come queste rispettino anche la prima caratteristica, ovvero contengono almeno una nota che non fa parte della tonalità originale (C maggiore).&lt;/p&gt;
+
+&lt;p&gt;Per quanto riguarda l’ultima caratteristica notiamo che una sola dominante secondaria non la rispetta. Quella costruita a partire dal VII grado. Il F# infatti, a differenza di tutte le altre fondamentali, non fa parte della tonalità principale (avendo la quinta diminuita).&lt;br /&gt;
+Per questo motivo &lt;strong&gt;la dominante costruita partendo dal VII grado non può essere definita dominante secondaria&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Potete trovare maggiori informazioni sule dominanti secondarie in &lt;a href=&quot;/dominanti-secondarie-modulazioni-di-passaggio&quot;&gt;questo articolo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;dominante-cromatica-sostituzione-a-tritono&quot;&gt;Dominante cromatica (sostituzione a tritono)&lt;/h2&gt;
+
+&lt;p&gt;All’interno di un accordo di dominante troviamo un intervallo di tritono (tre toni) tra il terzo e il settimo grado. Ad esempio in G7 troviamo un intervallo di tritono tra il B (terzo grado) e il F (settimo grado).&lt;/p&gt;
+
+&lt;p&gt;La sostituzione a tritono viene applicata ad un accordo di dominante sostituendolo con un altro accordo di dominante che presenta lo stesso tritono rivoltato. In G7 come abbiamo visto l’intervallo di tritono è dato da B - F. Questo tritono può essere trovato anche nell’accordo di dominante di Db7: F (terzo grado) - Cb (settimo grado). Il B e il Cb sono equivalenti enarmonici. &lt;br /&gt;
+La sostituzione a tritono sostituisce un accordo di dominante con un altro accordo di dominante a distanza di tritono (una quinta diminuita).&lt;br /&gt;
+Possiamo facilmente notare che, essendo il sistema temperato (12 note) formato da 6 toni, ovvero due tritoni, salendo o scendendo di un tritono otteniamo sempre la stessa nota.&lt;/p&gt;
+
+&lt;p&gt;Prendiamo in esame la cadenza perfetta (V - I): G7 - Cmaj7&lt;br /&gt;
+Se applichiamo la sostituzione a tritono al G7 otteniamo: Db7 - Cmaj7.&lt;br /&gt;
+Come vediamo tra il Db e il C c’è una discesa cromatica, da cui prende il nome questa sostituzione: &lt;strong&gt;dominante cromatica&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Questa discesa cromatica può essere più estesa. Pensiamo al turnaround II - V - I: Dm - G7 - Cmaj7. Sostituituendo a tritono il G7 otteniamo: Dm - Db7 - Cmaj7.&lt;br /&gt;
+Vediamo quindi che la discesa cromatica parte dal secondo grado: D - Db - C.&lt;/p&gt;
+
+&lt;p&gt;In molti brani possiamo trovare un susseguirsi di dominanti secondarie che seguono in senso antiorario il circolo delle quinte: B7 - E7 - A7 - D7 - G7 - Cmaj7.&lt;br /&gt;
+Questo forma un susseguirsi di V/V, ovvero un quinto grado che va una quinta sotto a un altro quinto grado, fino ad arrivare al primo grado (Cmaj7).&lt;br /&gt;
+Sostituendo a tritono alcuni degli accordi di dominante nella progressione del circolo delle quinte visto sopra otteniamo: B7 - Bb7 - A7 - Ab7 - G7 - Cmaj7.&lt;br /&gt;
+Vediamo come in questo caso il movimento cromatico dura molto più a lungo creando un effetto molto interessante.&lt;/p&gt;
+
+&lt;h2 id=&quot;accordo-relativo-accordo-diminuito&quot;&gt;Accordo relativo (accordo diminuito)&lt;/h2&gt;
+
+&lt;p&gt;L’accordo diminuito, per via della sua successione di terze minori, è un accordo simmetrico, ovvero si ripete in modo uguale ogni terza minore. La stessa scala diminuita è una scala simmetrica che quindi avrà le stesse note ogni terza minore.&lt;br /&gt;
+Ad esempio il C diminuito sarà uguale al Eb diminuito, al Gb diminuito e al Bbb (A) diminuito.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C diminuito: C - Eb - Gb - Bbb&lt;/li&gt;
+  &lt;li&gt;Eb diminuito: Eb - Gb - Bbb - Dbb (C)&lt;/li&gt;
+  &lt;li&gt;Gb diminuito: Gb - Bbb - Dbb (C)  - Fbb (Eb)&lt;/li&gt;
+  &lt;li&gt;A diminuito (Bbb): A - C - Eb - Gb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Possiamo abbassare ogni nota (una per volta) di un semitono ottenendo un accordo di dominante.&lt;br /&gt;
+Prendiamo l’accordo di C diminuito (che abbiamo visto essere uguale al Eb diminuito, al Gb diminuito e al A diminuito): C - Eb - Gb - Bbb&lt;br /&gt;
+Se abbassiamo di un semitono il C otteniamo l’accordo: B - Eb - Gb - Bbb. Sostituendo questo accordo enarmonicamente otteniamo un B7: B - D# - F# - A&lt;br /&gt;
+Possiamo fare la stessa cosa per ogni singola nota all’interno dell’accordo diminuito. Proviamo ad abbassare il Eb di un semitono: D - Gb - Bbb - C. Sostituendo enarmonicamente: D - F# - A - C. Abbiamo ottenuto un D7.&lt;br /&gt;
+Un accordo diminuito corrisponde, quindi, a quattro accordi di dominante senza fondamentale con la 9 bemolle.&lt;br /&gt;
+Infatti, sostituendo enarmonicamente: C - D# - F# - A non è altro un accordo di B7 senza fondamentale con la 9 bemolle (il C).&lt;br /&gt;
+Allo stesso modo: Eb - F# - A - C è un accordo di D7 senza fondamentale con la 9 bemolle (Eb)&lt;br /&gt;
+L’accordo diminuito di C (che corrisponde all’accordo diminuito di Eb, Gb e A) può essere visto anche come:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;B7&lt;/li&gt;
+  &lt;li&gt;D7&lt;/li&gt;
+  &lt;li&gt;F7&lt;/li&gt;
+  &lt;li&gt;Ab7&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Per questo motivo un accordo di dominante può essere sostituito dall’accordo (relativo) diminuito. Prendiamo la cadenza G7 - C. Il G7 può essere sostituito dal suo accordo relativo (diminuito): Bdim - C&lt;/p&gt;
+
+&lt;p&gt;Siccome il Bdim corrisponde anche al D diminuito, al F diminuito e al Ab diminuito possiamo anche trovare: Ddim - C&lt;/p&gt;
+
+&lt;p&gt;Come facciamo quindi a capire quale è l’accordo che è stato sostituito (nel nostro caso il G7) ?&lt;br /&gt;
+Il modo più semplice è prendere l’accordo diminuito: B - D - F - Ab. &lt;br /&gt;
+A questo punto abbassiamo di un semitono ogni nota per vedere quali accordi di dominante può sostituire: Bb7 - Db7 - Eb7 - G7. &lt;br /&gt;
+Una volta trovati gli accordi di dominante è immediato capire quale è l’accordo che è stato sostituito in base alla sua funzione rispetto all’accordo dove si risolve (il C maggiore nel nostro caso).&lt;br /&gt;
+Infatti nel nostro caso i due accordi che andrebbero bene per la cadenza sul C sono il Db7 e il G7. Il Db7, come abbiamo visto prima, non è altro che la sostituzione a tritono di G7. Risulta quindi immediato capire che l’accordo sostituito è il G7.&lt;/p&gt;
+
+&lt;p&gt;Come facciamo invece a sapere quali accordi vanno bene per sostituire l’accordo di dominante?&lt;br /&gt;
+Facciamo semplicemente il procedimento inverso, alziamo di un semitono il G7 (Ab) e troviamo l’accordo diminuito relativo che, come abbiamo visto prima, corrisponde ad altri 3 accordi diminuiti, il B, il D e il F.&lt;br /&gt;
+L’accordo relativo più utilizzato è quello che parte una terza maggiore sopra la dominante, ovvero il B diminuito nel nostro caso, che crea un movimento cromatico nella risoluzione sul C.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusione&quot;&gt;Conclusione&lt;/h2&gt;
+
+&lt;p&gt;Attraverso queste sostituzioni possiamo applicare delle variazioni armoniche per creare colori diversi.&lt;br /&gt;
+E’ importante capire in che modo queste sostituzioni modificano l’aspetto armonico e la tensione generata, per questo vi consiglio di suonare delle progressioni armoniche e di applicare poi delle sostituzioni.&lt;br /&gt;
+Un altro esercizio molto importante è provare ad analizzare l’aspetto armonico dei brani in modo da capire che tipo di sostituzione è stata scelta, come suona e provarne di nuove. &lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">All’interno di un brano vengono spesso applicate della sostituzioni agli accordi per modificare il colore/movimento armonico, mantenendo la tensione ricercata. Possiamo dividere le sostituzioni in due gruppi principali, diatoniche e cromatiche. Le sostituzioni diatoniche hanno all’interno del nuovo accordo note tutte appartenenti alla tonalità in cui siamo, viceversa nelle sostituzioni cromatiche troveremo note al di fuori della tonalità. Le principali sostituzioni che possiamo trovare, e che oggi analizzeremo, sono:</summary></entry><entry><title type="html">Armonia per terze, quarte e quinte</title><link href="http://localhost:4000/armonia/2019/05/10/51-armonia-terze-quarte-quinte.html" rel="alternate" type="text/html" title="Armonia per terze, quarte e quinte" /><published>2019-05-10T11:29:54+02:00</published><updated>2019-05-10T11:29:54+02:00</updated><id>http://localhost:4000/armonia/2019/05/10/51-armonia-terze-quarte-quinte</id><content type="html" xml:base="http://localhost:4000/armonia/2019/05/10/51-armonia-terze-quarte-quinte.html">&lt;p&gt;Quando si pensa ad un accordo si pensa, solitamente, alla sua costruzione per succesione di terze. Se prendiamo un accordo di C maggiore esso è, solitamente, costruito da una successione di terze (maggiori e minori): C - E - G - B:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C - E -&amp;gt; terza maggiore&lt;/li&gt;
+  &lt;li&gt;E - G -&amp;gt; terza minore&lt;/li&gt;
+  &lt;li&gt;G - B -&amp;gt; terza maggiore&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Anche quando aggiungiamo le sue estensioni (9, 11, 13) continuiamo a salire per terze:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;B - D -&amp;gt; terza minore&lt;/li&gt;
+  &lt;li&gt;D - F -&amp;gt; terza minore&lt;/li&gt;
+  &lt;li&gt;F - A -&amp;gt; terza maggiore&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In questo caso si parla di armonia per terze (o terzana). Si parla di armonia per terze anche quando questi accordi non sono in stato fondamentale, ma in stato di rivolto, che sia prima o seconda inversione.&lt;br /&gt;
+Si parla di rivolto quando un accordo non ha più la sua nota fondamentale al basso. Possiamo ad esempio prendere il C maggiore C - E - G e farlo partire dalla sua terza o dalla sua quinta: E - G - C (partendo dalla terza) o G - C - E (partendo dalla quinta). In questo caso la successione non è più per terze ma nel primo caso troviamo terza + quarta (solitamente indicato come 6/3) e nel secondo caso quarta + terza (solitamente indicato come 6/4).&lt;/p&gt;
+
+&lt;p&gt;Questo però non è l’unico modo in cui possiamo costruire un accordo.&lt;br /&gt;
+Si parla di armonia per quarte (quartale) e di armonia per quinte quando un accordo viene rispettivamente creato a partire da una successione di quarte e di quinte.&lt;/p&gt;
+
+&lt;h2 id=&quot;armonia-quartale&quot;&gt;Armonia quartale&lt;/h2&gt;
+
+&lt;p&gt;L’armonia quartale è molto utilizzata nel jazz. McCoy Tyner fu il primo negli anni ‘60 ad utilizzare molto questo tipo di accordi.&lt;br /&gt;
+Prendiamo sempre il C come nota fondamentale e costruiamo l’accordo per quarte: C - F - B - E - A&lt;br /&gt;
+In questo caso abbiamo un accordo di C maggiore con la quarta (F) e la tredicesima (A).&lt;br /&gt;
+Questi accordi restano molto sospesi in quanto non hanno un centro tonale molto chiaro. Prendiamo l’accordo di prima (C - F - B - E - A): potrebbe essere anche un F con la sua quarta: F - A - C - E - B. O ancora potrebbe essere un A sesta con la nona (A - C - E - F - B).&lt;/p&gt;
+
+&lt;p&gt;Solitamente, nel jazz, questi accordi non vengono creati a partire dalla tonica ma dalla terza o dalla settima. Rimaniamo sempre in C, un voicing molto comune è:&lt;br /&gt;
+E - A - D - G  - C. Questo accordo, al contrario, non è altro che la progressione in senso orario del circolo delle quinte ( C - G - D - A - E ).&lt;/p&gt;
+
+&lt;p&gt;Come abbiamo visto per gli accordi costruiti per terze anche gli accordi quartali possono essere in posizione di rivolto. Un voicing molto interessante riguarda la prima inversione di un accordo quartale costruito a partire dalla terza (come abbiamo visto prima) quindi: A - D - G - C - E.&lt;br /&gt;
+Gli accordi in questa inversione sono meglio conosciuti come So What Chords.&lt;br /&gt;
+Questi accordi furono utilizzati dal pianista Bill Evans in So What di Miles Davis nell’album Kind Of Blue del 1959.&lt;/p&gt;
+
+&lt;h2 id=&quot;armonia-per-quinte&quot;&gt;Armonia per quinte&lt;/h2&gt;
+
+&lt;p&gt;Questo tipo di accordo ha un suono molto aperto ma trova un’applicazione molto limitata per via della sua “difficoltà” di movimento verso altri accordi.&lt;br /&gt;
+Essendo costruito per quinte il primo chord tone arriva come quinta voce dell’accordo: C - G - D - A - &lt;strong&gt;E&lt;/strong&gt;&lt;br /&gt;
+E’ spesso usato come accordo a tre voci cone tonica - quinta e nona: C - G - D&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusione&quot;&gt;Conclusione&lt;/h2&gt;
+
+&lt;p&gt;Gli accordi costruiti per intervalli differenti rispetto alla terza possono darci ulteriori possibilità a livello armonico e di movimento/tensione che si viene a creare.&lt;br /&gt;
+L’armonia quartale è molto utilizzata, crea un accordo sospeso, senza un preciso centro tonale in quanto può essere associato ad accordi differenti.&lt;br /&gt;
+Gli accordi costruiti per intervalli di quinte risultano invece più aperti ma allo stesso tempo più difficili da far muovere per creare un movimento e una tensione associata.&lt;/p&gt;
+
+&lt;p&gt;Uno dei pianisti che più ha utilizzato gli accordi quartali è senza dubbio McCoy Tyner di cui consiglio l’ascolto, oltre che per la bellezza, per capire che “colore” questi accordi possono dare. Un’ulteriore idea degli accordi quartali può essere trovata in So What, celebre brano di Miles Davis, dove il pianista Bill Evans utilizza gli accordi quartali in primo rivolto.&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">Quando si pensa ad un accordo si pensa, solitamente, alla sua costruzione per succesione di terze. Se prendiamo un accordo di C maggiore esso è, solitamente, costruito da una successione di terze (maggiori e minori): C - E - G - B:</summary></entry><entry><title type="html">iskyd.it - Dallo Sviluppo al Deploy</title><link href="http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html" rel="alternate" type="text/html" title="iskyd.it - Dallo Sviluppo al Deploy" /><published>2019-05-09T12:00:41+02:00</published><updated>2019-05-09T12:00:41+02:00</updated><id>http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd</id><content type="html" xml:base="http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html">&lt;p&gt;Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?&lt;/p&gt;
+
+&lt;p&gt;Possiamo scomporre tutto in tre macro categorie: &lt;strong&gt;Applicazione&lt;/strong&gt;, &lt;strong&gt;Database&lt;/strong&gt;, &lt;strong&gt;Deploy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;applicazione&quot;&gt;&lt;strong&gt;Applicazione&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;L’applicazione è scritta in &lt;strong&gt;python&lt;/strong&gt; utilzzando il web framework &lt;strong&gt;Flask&lt;/strong&gt;. Di conseguenza il template engine utilizzato è &lt;strong&gt;Jinja&lt;/strong&gt; e il WSGI è &lt;strong&gt;Werkzeug&lt;/strong&gt;. Flask, Jinja e Werkzeug condividono lo stesso autore: Armin Ronacher.&lt;br /&gt;
+Ulteriori estensioni utilizzate sono:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Flask-Admin: per tutta la gestione CRUD delle entità (articoli, categorie, tag…)&lt;/li&gt;
+  &lt;li&gt;Flask-Login: per gestire il security della parte admin&lt;/li&gt;
+  &lt;li&gt;Flask-WTF: per gestire i form&lt;/li&gt;
+  &lt;li&gt;Flask-SQLAlchemy: integrazione di SQL-Alchemy in flask&lt;/li&gt;
+  &lt;li&gt;click: per i comandi (inizializzazione database, generazione sitemap, generazione feedRss, creazione utenti ecc…)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La scelta dell’ORM è ricaduta su SQLAlchemy per varie ragioni tra cui, le sue potenzialità, la community, il supporto ai principali database (nella fase di sviluppo non avevo ancora deciso che database utilizzare) e l’integrazione immediata con Flask. &lt;/p&gt;
+
+&lt;p&gt;Per quanto riguarda la parte frontend è stato utilizzato, come dicevo precedentemente, Jinja come template engine, jquery come utilities javascript e bootstrap come framework css.&lt;/p&gt;
+
+&lt;p&gt;JQuery è stato utilizzato solo perchè è una dipendenza di altre librerie che ho utilizzato (bootstrap ad esempio). Essendo molto limitato, nel mio caso, l’utilizzo di javascript avrei evitato l’utilizzo di JQuery.&lt;/p&gt;
+
+&lt;p&gt;I file statici sono gestiti tramite gulp in modo da avere un unico file css e un unico file js.&lt;br /&gt;
+Tutti gli assets infatti (css e js) vengono concatenati e successivamente minificati tramite gulp, in modo da ridurre il numero e la dimensione dei file statici.&lt;/p&gt;
+
+&lt;h2 id=&quot;database&quot;&gt;&lt;strong&gt;Database&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Inizialmente la scelta del database era ricaduta su un database NoSQL (mongodb molto probabilmente) in quanto pensavo di gestire anche i commenti degli articoli.&lt;br /&gt;
+Sarebbe stato molto comodo infatti estrarre direttamente l’articolo e i commenti ad esso associati evitando JOIN. &lt;br /&gt;
+Successivamente ho deciso di appoggiarmi a disqus per la gestione dei commenti e per cui, non avendo più necissità di un database NoSQL la scelta è ricaduta su un database relazionale.&lt;br /&gt;
+Non ho scelto da subito mysql, anzi il sito è stato sviluppato con sqlite per poi passare a mysql solamente in produzione, grazie a SQLAlchemy.&lt;/p&gt;
+
+&lt;p&gt;Ho scelto mysql per comodità, performance, facilità di gestione. Non avevo inoltre necessità di portabilità, grande punto a favore di sqlite.&lt;/p&gt;
+
+&lt;h2 id=&quot;deploy&quot;&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;L’applicativo è eseguito all’interno di un container docker. Ormai docker è un mio MUST per ogni applicativo, indipendentemente dalla tecnologia scelta. I vantaggi sono infiniti: utilizzo dello stesso ambiente in sviluppo e in produzione, possibilità di deployare più container senza doversi preoccupare di niente, lanciare l’applicativo in maniere automatica, CI ecc..&lt;/p&gt;
+
+&lt;p&gt;Il progetto utilizza, ovviamente, GIT (versionamento) ed è hostato su Github (da quando mamma Microsoft ha acquistato github il numero di repository privati senza pagare è diventato illimitato &amp;lt;3). &lt;br /&gt;
+L’immagine docker è invece pushata sul docker hub.&lt;br /&gt;
+Ed è proprio qui che la magia inizia. Docker hub consente di effettuare build dell’immagine in maniera automatica quando viene rilevato un nuovo commit su Github. &lt;br /&gt;
+Tramite watchtower inoltre è possibile redeployare il container (pull della nuova immagine e run del container) in maniera automatica, quando viene rilevata un aggiornamento dell’immagine sul registry. &lt;br /&gt;
+In questo modo la mia unica preoccupazione è quella di fare un push su github, tutto il resto è automatico. Docker hub si occuperà di creare la nuova immagine e watchtower (che gira in un container sulla stessa macchina dell’applicativo) si occuperà di fare redeploy. Fantastic!&lt;/p&gt;
+
+&lt;p&gt;All’interno del container il nostro http server è gunicorn mentre sulla macchina è apache che riceve la richiesta e fa proxy pass sulla porta esposta dal container, su cui è in ascolto gunicorn.&lt;br /&gt;
+La parte più complessa, di caching, è su apache.&lt;br /&gt;
+Apache si occupa infatti di cachare (tramite mod_cache_disk) tutte le richieste tranne quelle alle pagine di admin. &lt;br /&gt;
+Inoltre per tutte le pagine ho scelto un expire di 1 giorno mentre per le immagini di 1 mese. Questa scelta è indicativa per le mie necessità.&lt;br /&gt;
+Apache oltre al caching si occupa anche di gestire la sicurezza delle richieste attraverso il protocollo https. Tutte le richieste infatti faranno redirect ad https e solo in quel caso verranno servite. I certificati SSL utilizzati sono quelli di Let’s Encrypt.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusione&quot;&gt;&lt;strong&gt;Conclusione&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Le scelte principali che ho fatto, quindi, riguardano il linguaggio di programmazione (e di conseguenza un web framework relativo), il database, l’utilizzo di docker (e tutta l’automazione del deploy) e di apache (principalmente del caching).&lt;br /&gt;
+Tutte queste scelte sono fatte in base alle mie necessità che quindi potrebbero essere diverse dalle vostre.&lt;br /&gt;
+Indubbiamente l’utilizzo di docker è un MUST nel 2019.&lt;br /&gt;
+Un’ORM come SQLAlchemy lo è altrettanto.&lt;br /&gt;
+Automatizzare il deploy forse lo è ancora di più!&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?</summary></entry><entry><title type="html">Equivalente enarmonico</title><link href="http://localhost:4000/armonia/2019/04/09/equivalente-enarmonico.html" rel="alternate" type="text/html" title="Equivalente enarmonico" /><published>2019-04-09T14:18:55+02:00</published><updated>2019-04-09T14:18:55+02:00</updated><id>http://localhost:4000/armonia/2019/04/09/equivalente-enarmonico</id><content type="html" xml:base="http://localhost:4000/armonia/2019/04/09/equivalente-enarmonico.html">&lt;p&gt;L’enarmonia è un principio dell’armonia tonale in base al quale due note con nome diverso producono lo stesso suono.&lt;/p&gt;
+
+&lt;p&gt;Possiamo quindi affermare che il C# è l’equivalente enarmonico del Db.&lt;/p&gt;
+
+&lt;p&gt;Ma queste due note, in armonia, essendo equivalenti hanno la stessa funzione?&lt;/p&gt;
+
+&lt;p&gt;La risposta è &lt;strong&gt;NO! &lt;/strong&gt;Vediamo il perchè.&lt;/p&gt;
+
+&lt;p&gt;Un intervallo tra due note è definito dalla quantità e dalla qualità.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La quantità&lt;/strong&gt; è un numero definito dal numero di note (incluse le due note base) che ci sono tra una nota e l’altra.&lt;br /&gt;
+Ad esempio tra C e D ci sono due note (C e D) per questo è un intervallo di seconda.&lt;br /&gt;
+Tra C e E ci sono tre note (C – D – E) e infatti è un intervallo di terza.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La qualità&lt;/strong&gt; è definita da un confronto tra l’intervallo che stiamo cercando con il relativo intervallo sulla scala maggiore.&lt;br /&gt;
+Può essere maggiore, minore, giusto, diminuito o aumentato.&lt;br /&gt;
+Prendiamo la scala di C maggiore (C – D – E – F – G – A – B – C).&lt;br /&gt;
+Sappiamo che nella scala maggiore tutti gli intervalli sono maggiori o giusti. Gli intervalli di quarta, quinta e ottava possono essere diminuiti, giusti o aumentati.&lt;br /&gt;
+Prendiamo ad esempio l’intervallo tra C e E, sappiamo che è una terza e troviamo lo stesso intervallo sulla scala maggiore (che sappiamo essere maggiore). L’intervallo risulta quindi essere una terza maggiore.&lt;br /&gt;
+Se dall’intervallo maggiore scendiamo di un semitono troviamo un intervallo minore, se scendiamo di due semitoni troviamo un intervallo diminuito mentre se saliamo di un semitono un intervallo aumentato.&lt;br /&gt;
+C – Eb -&amp;gt; terza minore&lt;br /&gt;
+C – Ebb -&amp;gt; terza diminuita&lt;br /&gt;
+C – E# -&amp;gt; terza aumentata&lt;/p&gt;
+
+&lt;p&gt;Allo stesso modo si comportano gli intervalli di quarta, quinta e ottava. Se da un intervallo giusto scendiamo di un semitono troviamo un intervallo diminuito mentre se saliamo di un semitono troviamo un intervallo aumentato.&lt;/p&gt;
+
+&lt;p&gt;Una volta capito come funzionano gli intervalli possiamo rispondere al perchè della domanda iniziale: &lt;strong&gt;Perchè due suoni enarmonici non hanno la stessa funzione?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Prendiamo ad esempio l’intervallo C – E. Come abbiamo detto prima si tratta di un intervallo di terza maggiore.&lt;br /&gt;
+Prendiamo ora l’equivalente enarmonico di E, ovvero Fb (può essere equivalente enarmonico anche il D##).&lt;br /&gt;
+Che intervallo è C – Fb? E’ un intervallo di quarta diminuita.&lt;/p&gt;
+
+&lt;p&gt;Nonostante abbiamo due intervalli enarmonici abbiamo due funzioni differenti!&lt;br /&gt;
+C – E -&amp;gt; terza maggiore&lt;br /&gt;
+C – Fb -&amp;gt; quarta diminuita.&lt;/p&gt;
+
+&lt;p&gt;Quando lavoriamo all’interno di una tonalità, è bene tener presente il principio sopra descritto e quali sono quindi la note che caratterizzano quella tonalità. Se siamo in C la terza maggiore è il E (non Fb che sarebbe la quarta diminuita) e quindi utilizzeremo il E.&lt;/p&gt;
+
+&lt;p&gt;Cerchiamo di ampliare ora il concetto di enarmonia alle scale.&lt;br /&gt;
+Due scale, essendo le scale un insieme di intervalli, possono essere enarmoniche. La scala di B maggiore è l’equivalente enarmonico della scala di Cb.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Quale scala utilizziamo?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ovviamente nessuno ci vieta di utilizzare una scala rispetto ad un altra ma il buon senso ci impone di utilizzare la scala più “semplice”.&lt;br /&gt;
+Prendiamo le due scale di prima, il B maggiore e il Cb maggiore.&lt;br /&gt;
+B maggiore -&amp;gt; B – C# – D# – E – F# – G# – A# – B&lt;br /&gt;
+Cb maggiore -&amp;gt; Cb -Db – E – Gb – Ab – Bb – Cb&lt;/p&gt;
+
+&lt;p&gt;Nella prima scala abbiamo 5 diesis e quindi avremo 5 alterazioni in chiave, mentre nella seconda abbiamo 6 bemolli e quindi 6 alterazioni in chiave.&lt;br /&gt;
+Per questo sarebbe opportuno utilizzare la scala di B invece che quella di Cb anche se in questo caso abbiamo solo un’alterazione di differenza.&lt;/p&gt;
+
+&lt;p&gt;Facciamo un altro esempio, G# e Ab.&lt;br /&gt;
+G# maggiore -&amp;gt; G# – A# – B# – C# – D# – E# – F# -G#&lt;br /&gt;
+Ab maggiore -&amp;gt; Ab – Bb – C – Db – Eb – F – G – Ab&lt;/p&gt;
+
+&lt;p&gt;Come possiamo notare in questo caso abbiamo tutte le note alterate (sette alterazioni in chiave) per la scala di G# mentre solo 4 note alterate per la scala di Ab.&lt;br /&gt;
+Per questo motivo sceglieremo la scala di Ab.&lt;/p&gt;
+
+&lt;p&gt;Conclusione&lt;/p&gt;
+
+&lt;p&gt;Ho sentito spesso discutere se due intervalli enarmonici avessero la stessa funzione. Come ho detto nell’articolo la funzione è differente in quanto il tipo di intervallo che si crea è differente. Dobbiamo però notare come la tensione che viene generata da quell’intervallo sia la stessa.&lt;br /&gt;
+E’ importante però, soprattutto quando si scrive musica, utilizzare le giuste note appartenenti alla tonalità (ovviamente possiamo utilizzare delle note fuori dalla tonalità) e soprattutto evitare di complicare la scrittura con molteplici alterazioni in chiave quando possiamo utilizzare un equivalente enarmonico più semplice!&lt;/p&gt;
+
+&lt;p&gt;E’ importante essere coerenti quando stiamo scrivendo. Se abbiamo un accordo di C maggiore con quarta aumentata (F#) nel tema sceglieremo di utilizzare la quarta aumentata (F#) e non la quinta diminuita (Gb) nonostante siano equivalenti enarmonici!&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">L’enarmonia è un principio dell’armonia tonale in base al quale due note con nome diverso producono lo stesso suono.</summary></entry><entry><title type="html">Sincope e Controtempo</title><link href="http://localhost:4000/armonia/2019/03/19/sincope-controtempo.html" rel="alternate" type="text/html" title="Sincope e Controtempo" /><published>2019-03-19T13:17:06+01:00</published><updated>2019-03-19T13:17:06+01:00</updated><id>http://localhost:4000/armonia/2019/03/19/sincope-controtempo</id><content type="html" xml:base="http://localhost:4000/armonia/2019/03/19/sincope-controtempo.html">&lt;blockquote&gt;
+  &lt;p&gt;La sincope è lo spostamento dell’accento ritmico da un tempo forte a un tempo debole.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Vediamo la differenza tra un ritmo non sincopato e uno sincopato.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/no_sincope.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo non sincopato&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ritmo_sincopato.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo sincopato&lt;/p&gt;
+
+&lt;p&gt;Nel primo esempio, ovvero un ritmo non sincopato, tutte le note sono sul battere, ovvero su una suddivisione del tempo forte.&lt;br /&gt;
+Per quanto riguarda i ritmi semplici (come ad esempio il 4/4) i tempi forti sono rappresentati dal primo e dal terzo battere della battuta, mentre le suddivisioni forti sono rappresentate dal battere di ogni tempo nella battuta.&lt;br /&gt;
+Capita spesso di trovare in un ritmo composto (6/8, 9/8, 12/8..) una figurazione ritmica che in un ritmo semplice sarebbe sincopata, ma che non lo è nel ritmo composto.&lt;br /&gt;
+&lt;em&gt;Potete trovare maggiori informazioni sui ritmi semplici e composti in &lt;a href=&quot;https://iskyd.it/tempi-semplici-composti-misti/&quot;&gt;questo articolo&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Nel secondo esempio invece, dove troviamo un ritmo sincopato, la seconda nota, ovvero il re, si trova in levare, ovvero su una suddivisione del tempo debole.&lt;br /&gt;
+In questo modo abbiamo spostato l’accento ritmico da una suddivisione del tempo forte a una debole e abbiamo ottenuto una sincope.&lt;/p&gt;
+
+&lt;p&gt;La sincope può essere di quattro tipi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;regolare&lt;/li&gt;
+  &lt;li&gt;irregolare&lt;/li&gt;
+  &lt;li&gt;semplice&lt;/li&gt;
+  &lt;li&gt;composta&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regolare e irregolare&lt;/p&gt;
+
+&lt;p&gt;Una sincope si dice regolare quando si trova tra due note di valore uguale.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ritmo_sincopato_regolare.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo sincopato regolare&lt;/p&gt;
+
+&lt;p&gt;Come possiamo vedere il re, la nostra sincope (nota il cui accento ritmico è stato spostato dal tempo forte al tempo debole), si trova tra due note di uguale valore, due crome.&lt;/p&gt;
+
+&lt;p&gt;Viceversa se la sincope si trova tra due note di valore differente sarà una sincope irregolare.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/sincope_irregolare.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo sincopato irregolare&lt;/p&gt;
+
+&lt;p&gt;Come possiamo vedere in questo caso il re si trova tra due note di valore diverso, una croma, il do, e una semiminima, il mi.&lt;/p&gt;
+
+&lt;p&gt;Semplice e composta&lt;/p&gt;
+
+&lt;p&gt;Una sincope si definisce semplice quando viene spostato sul tempo debole un solo accento.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ritmo_sincopato_semplice.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo sincopato semplice&lt;/p&gt;
+
+&lt;p&gt;In questo caso l’accento viene spostato sulla suddivisione debole solo per quanto riguarda la semiminima di re (seconda nota), successivamente torna ad essere sulla suddivisione forte (sul battere del terzo tempo) con la semibreve di re.&lt;/p&gt;
+
+&lt;p&gt;Viceversa, se vengono spostati più accenti, il ritmo sincopato viene definito composto.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ritmo_sincopato_composto.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo sincopato composto&lt;/p&gt;
+
+&lt;p&gt;In questo caso invece sia il re che il mi (seconda e terza nota) si trovano con l’accento sulla suddivisione del tempo debole, rispettivamente sul levare del primo e del secondo tempo.&lt;br /&gt;
+Soltanto la nota finale, il re, torna ad essere sul battere del quarto tempo.&lt;/p&gt;
+
+&lt;p&gt;Sincope nei tempi composti&lt;/p&gt;
+
+&lt;p&gt;Come abbiamo detto prima, è molto facile in un tempo composto scambiare per sincope un normale ritmo in cui gli accenti sono sul tempo forte (o sulla suddivisione forte).&lt;br /&gt;
+Vediamo un esempio in 6/8:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ritmo_non_sincopato_tempo_composto.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ritmo non sincopato&lt;/p&gt;
+
+&lt;p&gt;Se fossimo in un tempo semplice (4/4) la figura ritmica dell’esempio sarebbe chiaramente una sincope. Essendo in un ritmo composto 6/8 l’accento non viene spostato dal tempo forte in quanto la suddivisione ritmica é composta da un battere e due levare e quindi da due tempi. Sia il do che il sol si trovano sul battere e quindi l’accento non viene spostato sul tempo debole della battuta.&lt;/p&gt;
+
+&lt;h2 id=&quot;controtempo&quot;&gt;Controtempo&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Il controtempo, o contrattempo, è un contrasto ritmico prodotto dall’alternarsi di una pausa sul tempo forte (o una suddivisione forte) e di una nota sul tempo debole (o su una suddivisione debole).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/controtempo_tempo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Controtempo&lt;/p&gt;
+
+&lt;p&gt;In questo esempio troviamo una pausa su un tempo forte (primo e terzo battere della battuta) mentre troviamo il do e il mi, su un tempo debole (secondo e quarto battere della battuta).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/controtempo_suddivisione.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Controtempo&lt;/p&gt;
+
+&lt;p&gt;In questo secondo esempio troviamo sempre un controtempo, ma invece che alternarsi pausa e nota sul tempo si alternano sulla sua suddivisione, ovvero sul battere e sul levare. Come abbiamo detto precedentemente il battere rappresenta la suddivisione del tempo forte, mentre il levare quella debole.&lt;/p&gt;
+
+&lt;p&gt;Conclusione&lt;/p&gt;
+
+&lt;p&gt;La sincope e il controtempo sono due elementi fondamentali della musica ed è molto importante quindi comprenderli alla perfezione.&lt;br /&gt;
+E’ molto importante fare pratica solfeggiando o suonando ritmi sincopati e controtempi in modo da capire l’effetto ritmico creato.&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">La sincope è lo spostamento dell’accento ritmico da un tempo forte a un tempo debole.</summary></entry><entry><title type="html">Armonia Negativa</title><link href="http://localhost:4000/armonia/2019/03/09/armonia-negativa.html" rel="alternate" type="text/html" title="Armonia Negativa" /><published>2019-03-09T13:15:19+01:00</published><updated>2019-03-09T13:15:19+01:00</updated><id>http://localhost:4000/armonia/2019/03/09/armonia-negativa</id><content type="html" xml:base="http://localhost:4000/armonia/2019/03/09/armonia-negativa.html">&lt;p&gt;Grazie a Jacob Collier negli ultimi anni la “negative harmony” è diventato un argomento molto discusso sul web.&lt;br /&gt;
+Ernst Levy fu il primo a parlare di inversione armonica, nel suo libro “A theory of harmony”, senza mai però utilizzare il termine “negativo”.&lt;/p&gt;
+
+&lt;p&gt;Secondo Levy “&lt;em&gt;Un accordo è composto da alcuni armonici scelti rispetto ad altri sviluppati su un suono generatore”.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Cos’è un armonico?&lt;/p&gt;
+
+&lt;p&gt;Gli armonici naturali sono una successione di suoni le cui frequenze sono multipli di una fondamentale (fx1, fx2, fx3…).&lt;br /&gt;
+Se ad esempio partiamo a generare gli armonici dal C2 che ha una frequenza di 66 HZ sappiamo che i successivi saranno:&lt;br /&gt;
+132HZ (C3) , 198HZ (G3) , 264HZ (C4) ecc…&lt;/p&gt;
+
+&lt;p&gt;Gli armonici non sono un’invenzione bensì una scoperta.&lt;br /&gt;
+Infatti un suono non è mai puro ma è formato fa un insieme di suoni, i suoi armonici.&lt;br /&gt;
+Questi sono i primi 16 armonici naturali del C.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/3ZD7Ir04yDR8MYWWA3EhVfE1qEcPqCGgtx-SQBEN6ZR-EMjxt_YmOnfnFlmG4gGA2xHUcoNL12v9y8K5XNNddvetn88znzyv3P7qQkcsdM-aAPXT7-eB58Wuuuj_37QwORb1mZmfUng&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Armonici naturali di C – Wikipedia&lt;/p&gt;
+
+&lt;p&gt;Il 4, 5, 6 armonico sono rispettivamente la triade maggiore di C, C – E – G.&lt;/p&gt;
+
+&lt;p&gt;Armonici Artificiali – Undertones&lt;/p&gt;
+
+&lt;p&gt;Gli armonici naturali si creano solamente dal basso verso l’alto (overtones), infatti non si crea nessun armonico inferiore alla nota generatrice.&lt;br /&gt;
+Questo era già stato sperimentato da Pitagora con il monocordo.&lt;/p&gt;
+
+&lt;p&gt;Sopra vediamo i 16 armonici naturali reali che si creano, mentre sotto vediamo gli armonici generati in modo inverso, artificialmente (undertones).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/NJWiwsr-lEv5FpuDUjp1NvkyMbiNxDCGb3YQVjiUjfTKnEDO-mKwIR1cLCBtNwB7Up4D72eHT0J_gcZwVJd9of5v6QYFtt8L_vXVM-99qS3awB7P_P_GaOvx6f8cKx8RzrL_xvClJmQ&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Armonici naturali di C&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/tBS7JE7NEHa9NyOjWDSCx4sJKsSLik5qgIBwmKsgS4jr_JezeM8Wdg0FY8LhxtpPKD4_rQ4ND4LA58sQ2pjd20GE9iCUZ1urkvnmsgzTx5q0hkwj7woXVyjBXyg7_Ymfa5q3b84YLG4&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Armonici artificiali, undertones, di C&lt;/p&gt;
+
+&lt;p&gt;Accordi Negativi&lt;/p&gt;
+
+&lt;p&gt;Sul 4, 5, 6 armonico degli armonici inversi troviamo le note C – Ab – F.&lt;br /&gt;
+Queste note non sono altro che la triade maggiore di C invertita, infatti la triade di C maggiore è formata da terza maggiore (4 semitoni) + terza minore (3 semitoni). Allo stesso modo tra C e Ab si forma una terza maggiore (discendente), ovvero 4 semitoni, e tra Ab e F una terza minore (discendente), ovvero 3 semitoni.&lt;/p&gt;
+
+&lt;p&gt;Viceversa se leggiamo la triade dal basso verso l’alto, come siamo abituati a fare, si crea la triade di Fm, F – Ab – C.&lt;br /&gt;
+Per questo motivo il rapporto tra sottodominante e fondamentale è così forte (cadenza plagale).&lt;/p&gt;
+
+&lt;p&gt;Se aggiungiamo anche il settimo armonico alla nostra triade troviamo l’accordo di dominante: C – E – G – Bb.&lt;br /&gt;
+Facendo lo stesso con gli armonici invertiti troviamo C – Ab – F – D, che specchia sempre l’accordo che si forma dagli armonici naturali (terza maggiore, quinta giusta, settima minore).&lt;br /&gt;
+Letto dal basso verso l’alto, invece, forma l’accordo di D semidiminuito (terza minore, quinta diminuita, settima minore).&lt;/p&gt;
+
+&lt;p&gt;Per questo motivo, secondo Levy, l’accordo di D semidiminuito non è altro che l’accordo di C di dominante negativo: &lt;strong&gt;Dmin7b5 = -C7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Accordo maggiore e minore&lt;/p&gt;
+
+&lt;p&gt;Come abbiamo visto prima la triade è formata dagli armonici fondamentali della nota fondamentale.&lt;br /&gt;
+In C quindi C – E – G , rispettivamente 3 maggiore e quinta perfetta.&lt;br /&gt;
+Consideriamo ora la quinta perfetta, ovvero il G, come fondamentale e prendiamo gli armonici negativi. Il suo terzo armonico (l’armonico fondamentale, che nella serie degli overtones è proprio la quinta perfetta) è la quarta perfetta, ovvero il C.&lt;br /&gt;
+Aggiungiamo ora a entrambi la terza maggiore (nella serie armonica negativa la terza maggiore viene generata, come tutti gli armonici, dall’alto verso il basso):&lt;br /&gt;
+C – E – G -&amp;gt; triade maggiore di C&lt;br /&gt;
+G – Eb – C -&amp;gt; triade minore di C&lt;/p&gt;
+
+&lt;p&gt;In questo modo le note stabili rimangono le stesse, cambia il tipo di accordo che da maggiore diventa minore.&lt;/p&gt;
+
+&lt;p&gt;Polarità degli accordi&lt;/p&gt;
+
+&lt;p&gt;Levy per costruire gli accordi in modo polare crea un asse di simmetria a metà tra la nota fondamentale e la sua quinta perfetta (ovvero tra Eb e E).&lt;/p&gt;
+
+&lt;p&gt;Otteniamo quindi la seguente divisione:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bb – B – C – Db – D – Eb&lt;/td&gt;
+      &lt;td&gt;E – F – Gb – G – Ab – A&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Visualizzandolo sul circolo delle quinte risulta più chiaro:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/mNlpGko3FxyCA9IWhJ67JipOkwqZE_z_j5Dcwg5DaZs3aEbGnZggHvTMhtTA7VCy3eS5O-6bbLTHlbbFBTauJuGKY32qslqaTve9p_Dhwj7LKgKXQlijY8cYt_rA2-Dxde-DuRQ1ZKM&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Circolo delle quinte, asse di simmetria&lt;/p&gt;
+
+&lt;p&gt;La polarità viene creata trasformando il C in G, il F in D ecc..&lt;/p&gt;
+
+&lt;p&gt;Ovviamente questo vale per la tonalità di C, se fossimo in tonalità di F l’asse di simmetria sarebbe posto a metà tra il F e la sua quinta perfetta, il C, ovvero tra il Ab e il A.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ma perchè proprio questo asse?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Questo asse, a metà tra fondamentale e quinta perfetta, è l’unico che trasforma le note stabili nelle stesse note stabili cambiando solamente il tipo di accordo, che come abbiamo visto prima da maggiore diventa minore.&lt;br /&gt;
+In questo modo, anche invertendo la triade, manteniamo la tensione che essa genera con il suo movimento.&lt;/p&gt;
+
+&lt;p&gt;Scala maggiore negativa&lt;/p&gt;
+
+&lt;p&gt;Attraverso l’asse di simmetria possiamo invertire la scala generata da una nota fondamentale, mantenendo quindi la stessa struttura della scala maggiore, tono-tono-semitono-tono-tono-tono-semitono, ma in senso “negativo”, dal basso verso l’alto.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/N8_evOLccK6XIe8Fs0RTe864Wd3zGJhm6xFoYZ_W5YHoVeiWohx2MqzB0uLWimwmLspBt0APWK2XFnUuYo6ZpNuLx80hLkZK3WaX8-qO7W-aBNrHwfeCErW-qtSVJaA1mF1keZpr678&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Scala di C maggiore&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/hppBRLXuePTww-LPckDeQCYnfRjbefkQDw6j-lAmkFHb72AvBWnq0NziHAPHdUqI2xLwoWQRXJaUzL3cTlE_Wra48bHAle-oSAsM5jt3fXwU_WFJBEq7ZsBvyrQfrEJd2_-Dr0jrVPk&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Scala negativa d C maggiore&lt;/p&gt;
+
+&lt;p&gt;Come possiamo notare in senso discendente manteniamo, come detto sopra, la stessa struttura della scala maggiore:&lt;br /&gt;
+G- F -&amp;gt; &lt;strong&gt;tono&lt;/strong&gt;&lt;br /&gt;
+F – Eb -&amp;gt; &lt;strong&gt;tono&lt;/strong&gt;&lt;br /&gt;
+Eb – D -&amp;gt; &lt;strong&gt;semitono&lt;/strong&gt;&lt;br /&gt;
+D – C -&amp;gt; &lt;strong&gt;tono&lt;/strong&gt;&lt;br /&gt;
+C – Bb -&amp;gt; &lt;strong&gt;tono&lt;/strong&gt;&lt;br /&gt;
+Bb – Ab -&amp;gt; &lt;strong&gt;tono&lt;/strong&gt;&lt;br /&gt;
+Ab – G -&amp;gt; &lt;strong&gt;semitono&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Letta dal basso verso l’alto, come siamo abituati, la scala negativa di C maggiore corrisponde alla scala frigia di G, questo ci può dare il senso del “negativo”, in quanto la scala frigia (seconda minore, terza minore, quarta perfetta, quinta perfetta, sesta minore, settima minore) è una scala “scura”.&lt;/p&gt;
+
+&lt;p&gt;Armonizzazione della scala maggiore&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/VHMjhF54uEVZjg0fdbv5NGw5U9c8Qsi3vK-E9Xszx9GxaCy5YQUFUYFL4oaWxArnAtIEtnIK9ddFD5hR3CTy0MyaSVqaZ9anulHZ6v5FMdVCjfKxzoA-ZHHtO-fPJETsrfekpFKZG7E&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Armonizzazione scala maggiore&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/mjcMRULTbPvew9CmnC5x4jb6NLECLttd4z9flJai42CFO8IhtcroWvcNft-EYaDhLS57uosc1e6fbywr04EHpK4nK1AkfXWI1vKLvXyWd9q5uvQai-YJNIL3OshiQ-InoSxSTNJcni0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Armonizzazione scala maggiore negativa&lt;/p&gt;
+
+&lt;p&gt;Nell’armonizzazione della scala maggiore gli accordi sono considerati sempre dal basso verso l’alto, infatti leggiamo C- e non G maggiore (dall’alto verso il basso), in quanto il nostro orecchio sentirebbe comunque l’accordo dal basso verso l’alto, come è abituato a fare.&lt;/p&gt;
+
+&lt;p&gt;Come possiamo vedere un accordo maggiore viene trasformato in un accordo minore e viceversa.&lt;br /&gt;
+Un accordo alterato (diminuito o eccedente) rimane invece alterato (diminuito o eccedente).&lt;/p&gt;
+
+&lt;p&gt;Per creare una triade negativa dobbiamo partire dalla quinta perfetta della triade di base, trasformare la quinta secondo l’asse visto in precedenza.&lt;br /&gt;
+La quinta trasformata sarà quindi la fondamentale della nostra nuova triade. A questo punto aggiungiamo terza e quinta secondo quanto visto in precedenza, ovvero un accordo maggiore diventa minore e viceversa mentre un accordo alterato rimane alterato.&lt;/p&gt;
+
+&lt;p&gt;Se volessimo trasformare la triade di C (C – E – G) nella corrispettiva triade “negativa”:&lt;br /&gt;
+Partiamo dalla quinta perfetta, il G, la trasformiamo, secondo l’asse visto in precedenza, in C.&lt;br /&gt;
+A questo punto sapendo che una triade maggiore diventa minore aggiungiamo terza minore (Eb) e quinta perfetta (G) ottenendo la triade negativa: C – Eb – G (o, dall’alto verso il basso, G – Eb – C).&lt;/p&gt;
+
+&lt;p&gt;Proviamo ora a trasformare altre due triadi, il E- (terzo grado del C maggiore) e il Bdim (settimo grado del C maggiore):&lt;/p&gt;
+
+&lt;p&gt;Prendiamo la quinta di E- (B) la trasformiamo, secondo l’asse, in Ab, che sarà quindi la fondamentale.&lt;br /&gt;
+L’accordo trasformato dovrà essere maggiore (in quanto l’accordo di base è minore), aggiungiamo quindi terza maggiore (C) e quinta perfetta (Eb).&lt;br /&gt;
+L’accordo trasformato è quindi: Ab – C – Eb (o, dall’alto verso il basso, Eb – C – Ab)&lt;/p&gt;
+
+&lt;p&gt;Per il Bdim, allo stesso modo, troviamo la nuova fondamentale trasformando la sua quinta (F), che sarà quindi D (il F trasformato secondo l’asse).&lt;br /&gt;
+Sapendo che la triade diminuita rimane diminuita aggiungiamo terza minore (F) e quinta minore (Ab) trovando quindi la triade D – F – Ab (o, dall’alto verso il basso, Ab – F – D9, ovvero il D diminuito.&lt;/p&gt;
+
+&lt;p&gt;Progressioni tipiche&lt;/p&gt;
+
+&lt;p&gt;Vediamo ora come possiamo sfruttare questa inversione per cambiare delle classiche progressioni armoniche dandogli un colore diverso.&lt;br /&gt;
+Come sappiamo la tensione generata dal movimento degli accordi rimarrà la stessa trasformando la triade nella sua versione “negativa”.&lt;/p&gt;
+
+&lt;p&gt;Una classica progressione armonica è: C- F – G – C.&lt;br /&gt;
+Cambiamo ora solo l’accordo di G, che invertito sarà un Fm: C – F – Fm -C&lt;br /&gt;
+Questa progressione viene utilizzata, ad esempio, nel pre-chorus di Don’t look back in anger degli Oasis.&lt;/p&gt;
+
+&lt;p&gt;Prima verrà suonata la progressione “originale” C – F – G – C, successivamente potrete la tensione che si crea invertendo il G con il Fm nella proressione C – F – Fm – C&lt;/p&gt;
+
+&lt;p&gt;Un’altra trasformazione usuale viene creata partendo dalla seguente progressione armonica: C – F – G7 – C&lt;br /&gt;
+Il G7 invertito diventa Dmin7b5: C – F – Dmin7b5 – C&lt;/p&gt;
+
+&lt;p&gt;Prima la progressione C – F – G7 – C, successivamente C – F – Dmin7b5 – C&lt;/p&gt;
+
+&lt;p&gt;Come ultimo esempio vediamo una delle progressioni più usate nella musica tonale, II – V – I : C – Dm – G – C&lt;br /&gt;
+Invertiamo il Dm: C – Bb – G – C&lt;/p&gt;
+
+&lt;p&gt;Prima la progressione C – Dm – G – C, successivamente C – Bb – G – C&lt;/p&gt;
+
+&lt;p&gt;Possiamo scegliere di invertire qualsiasi accordo all’interno della progressione e anche più di uno.&lt;br /&gt;
+Ovviamente alcune progressione suoneranno meglio di altre.&lt;/p&gt;
+
+&lt;p&gt;Spesso l’accordo viene invertito anche solo per metà della sua durata.&lt;br /&gt;
+Se abbiamo una battuta di Dm possiamo invertirlo per metà battuta, suonando quindi il Bb, e suonare il Dm per la successiva metà.&lt;/p&gt;
+
+&lt;p&gt;Conclusione&lt;/p&gt;
+
+&lt;p&gt;Grazie all’armonia negativa, o più in generale al concetto di inversione, potete trovare nuove soluzioni per progressioni armoniche e melodiche.&lt;br /&gt;
+Potete trovare anche nuove soluzioni anche modificando l’asse di inversione. In questo modo però la tensione generata non sarà più la stessa.&lt;/p&gt;
+
+&lt;p&gt;Le possibilità che ci offre l’armonia negativa sono infinite!&lt;br /&gt;
+Non vi resta che sperimentare!&lt;/p&gt;
+
+&lt;p&gt;Vi consiglio il canale di &lt;a href=&quot;https://www.youtube.com/channel/UCurOAVtqb7kM1siNlDynzFw/videos&quot;&gt;Steve Cruickshank&lt;/a&gt; che, tra le altre cose, fa cover di canzoni molto famose applicando il concetto della negative harmony.&lt;br /&gt;
+Questo può essere utile per ascoltare e farsi un’idea di quale è la tensione generata dall’inversione dell’armonia e della melodia di una canzone.&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">Grazie a Jacob Collier negli ultimi anni la “negative harmony” è diventato un argomento molto discusso sul web. Ernst Levy fu il primo a parlare di inversione armonica, nel suo libro “A theory of harmony”, senza mai però utilizzare il termine “negativo”.</summary></entry><entry><title type="html">Blues - Struttura armonica ed evoluzione</title><link href="http://localhost:4000/armonia/2019/02/24/blues-struttura-armonica.html" rel="alternate" type="text/html" title="Blues - Struttura armonica ed evoluzione" /><published>2019-02-24T13:13:48+01:00</published><updated>2019-02-24T13:13:48+01:00</updated><id>http://localhost:4000/armonia/2019/02/24/blues-struttura-armonica</id><content type="html" xml:base="http://localhost:4000/armonia/2019/02/24/blues-struttura-armonica.html">&lt;p&gt;In questo articolo analizzeremo la struttura armonica a partire da quello che è definito blues arcaico (country blues o urban blues) per arrivare alle sue forme più complesse degli anni 60 passando dal mito di Parker a quello di Coltrane.&lt;/p&gt;
+
+&lt;p&gt;Il blues si sviluppa agli inizi del 900 in America, a partire dallo spiritual e dalle work song degli schiavi africani.&lt;/p&gt;
+
+&lt;p&gt;Il blues è formato da 12 battute, suddivise in chiamata (le prime 4 battute) e risposta (le restanti 8 battute).&lt;/p&gt;
+
+&lt;p&gt;Nella sua forma base, il blues arcaico, assume la seguente forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I7&lt;/strong&gt; – I7 – I7 – I7&lt;br /&gt;
+&lt;strong&gt;IV7&lt;/strong&gt; – IV7 – I7 – I7&lt;br /&gt;
+&lt;strong&gt;V7&lt;/strong&gt; – IV7 – I7 – I7&lt;/p&gt;
+
+&lt;p&gt;Notiamo subito che gli accordi presenti sono quelli formati a partire dal I grado, dal IV grado e dal V grado, e sono tutti in forma di dominante (terza maggiore, quinta giusta e settima minore).&lt;/p&gt;
+
+&lt;p&gt;Se guardiamo gli accordi i gradi in grassetto (in verticale) notiamo subito che la succession è proprio I – IV – V ovvero prime 4 battute tonica, seconde 4 battute sottotodominante e ultime 4 battute dominante.&lt;/p&gt;
+
+&lt;p&gt;Facendo un esempio di blues arcaico in Bb abbiamo:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bb7&lt;/strong&gt; – Bb7 – Bb7 – Bb7&lt;br /&gt;
+&lt;strong&gt;Eb7&lt;/strong&gt; – Eb7 – Bb7 – Bb7&lt;br /&gt;
+&lt;strong&gt;F7&lt;/strong&gt; – Eb7 – Bb7 – Bb7&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-changes&quot;&gt;Quick Changes&lt;/h2&gt;
+
+&lt;p&gt;Questa struttura armonica veniva, a volte, modificata, con dei &lt;strong&gt;quick changes&lt;/strong&gt;.&lt;br /&gt;
+Nella seconda battuta veniva anticipato il IV grado e nell’ultima battuta veniva messo il V grado in modo da creare una cadenza perfetta se il brano ricominciava. Veniva invece lasciato il I grado nella battuta conclusiva del brano.&lt;br /&gt;
+Sempre in Bb, applicando questi quick changes, ottenimo:&lt;/p&gt;
+
+&lt;p&gt;Bb7 – Eb7 – Bb7 – Bb7&lt;br /&gt;
+Eb7 – Eb7 – Bb7 – Bb7&lt;br /&gt;
+F7 – Eb7 – Bb7 – F7 (Bb7)&lt;/p&gt;
+
+&lt;h2 id=&quot;jazz-blues&quot;&gt;Jazz blues&lt;/h2&gt;
+
+&lt;p&gt;Successivamente i jazzisti modificarono e complicarono la struttura armonica del blues con delle sostituzioni.&lt;br /&gt;
+Sulla nona battuta non troviamo più l’accordo di dominante, bensì la sostituzione della sottodominante, ovvero il II grado minore.&lt;br /&gt;
+Questo è il turnaround più utilizzando nella musica jazz: II – V7 – I.&lt;br /&gt;
+Anche l’ultima battuta, che con i quick changes era V7, venne sostituita da II – V in modo da cadere sul I della prima battuta.&lt;br /&gt;
+In Bb avremo:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bb7&lt;/strong&gt; – Eb7 – Bb7 – Bb7&lt;br /&gt;
+&lt;strong&gt;Eb7&lt;/strong&gt; – Eb7 – Bb7 – Bb7&lt;br /&gt;
+&lt;strong&gt;Cmin7&lt;/strong&gt; – Eb7 – Bb7 – Cmin7 F7 (Bb7)&lt;/p&gt;
+
+&lt;p&gt;Un’altra sostituzione, che spesso veniva applicata, la troviamo sull’ottava battuta. Il I grado viene sostituito da una progressione di II / V7 del II (C).&lt;br /&gt;
+Questo perchè ogni grado può essere considerato come I e quindi può essere preceduto da un II-V.&lt;br /&gt;
+In questo modo troveremo due accordi non diatonici in quanto non appartenenti alla tonalità di Bb (ma appartenenti alla tonalità dell’accordo che precedono, in questo caso di C).&lt;br /&gt;
+La progressione viene ad essere: Dmin7b5 G7+9 – Cmin7.&lt;/p&gt;
+
+&lt;p&gt;Concettualmente anche il Bb7 sulla quarta battuta assume un significato diverso, pur restando uguale. Non viene più considerato quindi come I ma come V grado del IV (Eb7), ovvero dell’accordo che precede.&lt;br /&gt;
+Questo è un blues in Bb7, applicando tutte le sostituzioni viste.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bb7&lt;/strong&gt; – Eb7 – Bb7 – Bb7&lt;br /&gt;
+&lt;strong&gt;Eb7&lt;/strong&gt; – Eb7 – Bb7 – Dmin7b5 G7+9&lt;br /&gt;
+&lt;strong&gt;Cmin7&lt;/strong&gt; – Eb7 – Bb7 – Cmin7 F7 (Bb7)&lt;/p&gt;
+
+&lt;h2 id=&quot;il-blues-nel-bop&quot;&gt;Il blues nel Bop&lt;/h2&gt;
+
+&lt;p&gt;Sono gli anni 40 e la struttura del blues subisce una grande variazione, soprattutto a opera del sassofonista Charlie Parker.&lt;br /&gt;
+Vengono introdotti accordi funzionali (accordi che anticipano le dominanti, dominanti secondarie, cambi di modo, sostituzioni a tritono) e turnaround.&lt;/p&gt;
+
+&lt;p&gt;Un ottimo esempio lo troviamo nel brano Au privave di Parker.&lt;/p&gt;
+
+&lt;p&gt;F7 – Gmin7 Abdim – F7 – Cmin7 F7&lt;br /&gt;
+Bb7 – Bb7 – F7 – Amin D7&lt;br /&gt;
+Gmin7 – C7 – F7 D7 – Gmin7 C7&lt;/p&gt;
+
+&lt;p&gt;Come possiamo subito notare, la struttura armonica diviene molto più complicata.&lt;br /&gt;
+Nella seconda battuta troviamo un II – IV che anticipa il F7 sulla terza battuta. Il Abdim infatti non è altro che sostituzione dell’accordo relativo del IV (Bb). Anche la quarta battuta è anticipata da II – V (del IV).&lt;br /&gt;
+Nelle ultime due battute troviamo il D7 che è V / II (G).&lt;/p&gt;
+
+&lt;p&gt;Un’altra modifica introdotta da Parker sono gli innesti di progressioni cromatiche discendenti. Possiamo vedere queste progressioni cromatiche nel brano ChiChi.&lt;/p&gt;
+
+&lt;p&gt;Ab7 – Bbmin7 Eb7 – Ab7 – Ebmin7 Ab7&lt;br /&gt;
+Db7 – Dbmin7 – Cmin7 – Cbmin7&lt;br /&gt;
+Bbmin7 – Eb7 – Cmin7 F7 – Bbmin7 Eb7&lt;/p&gt;
+
+&lt;p&gt;Nella sesta battuta troviamo un Dbmin7, questo è un interscambio modale, in quanto il Db minor arriva da un’altro modo e non dal maggiore di Ab (dove il D dovrebbe essere un major).&lt;/p&gt;
+
+&lt;p&gt;A partire dalla 6 battuta (sul Dbmin7) inizia la progressione cromatica discendente Db – C – Cb – Bb.&lt;/p&gt;
+
+&lt;p&gt;Tutto il pensiero Parkeriano dal punto di vista armonico è contenuto all’interno del brano Blues for Alice, che vi consiglio di analizzare.&lt;/p&gt;
+
+&lt;h2 id=&quot;coltrane-changes&quot;&gt;Coltrane Changes&lt;/h2&gt;
+
+&lt;p&gt;La sequanza armonica del Blues di Coltrane è veramente complessa.&lt;br /&gt;
+Anche i pianisti Cedar Walton e Tommy Flanagan sono stati messi in difficoltà da queste complesse strutture armoniche.&lt;/p&gt;
+
+&lt;p&gt;I Coltrane Changes consistono nell’attraversare 3 centri tonali distanti una terza maggiore (ascendente o discendente) per poi ritornare alla tonalità di base.&lt;br /&gt;
+Ad esempio in Bb:&lt;/p&gt;
+
+&lt;p&gt;Bb7 – Gbmaj7 – Dmaj7 – Bb7&lt;/p&gt;
+
+&lt;p&gt;Come vediamo il Bb è distante una terza maggiore dal Gb che a sua volta è distante una terza maggiore da D e che a sua volta è distante una terza maggiore dal Bb.&lt;br /&gt;
+Ogni accordo di centro tonale viene preceduto dalla relativa dominante.&lt;br /&gt;
+Risulta quindi essere:&lt;/p&gt;
+
+&lt;p&gt;Bb7 Db7 – Gbmaj7 A7 – Dmaj7 F7 – Bb7&lt;/p&gt;
+
+&lt;p&gt;Un’altra caratteristica del blues di Coltrane è quella di inserire il bridge del Rhythm Changes all’interno del brano.&lt;br /&gt;
+Questo è particolarmente evidente nel brano Locomotion, che ha una struttura AABA in cui la B riprende il bridge di I’ve Got Rhythm di 8 battute.&lt;/p&gt;
+
+&lt;h2 id=&quot;minor-blues&quot;&gt;Minor Blues&lt;/h2&gt;
+
+&lt;p&gt;Vediamo un esempio di un tipico blues in Cm:&lt;/p&gt;
+
+&lt;p&gt;Cmin7 – Cmin7 – Cmin7 – Cmin7&lt;br /&gt;
+Fmin7 – Fmin7 – Cmin7 – Cmin7&lt;br /&gt;
+Dmin7b5 – G7 – Cmin7 – Cmin7&lt;/p&gt;
+
+&lt;p&gt;I principali cambiamenti possiamo trovarli sulla quarta battuta, dove invece di un I minore troviamo un I7 che però non è un primo, bensì un V del IV (C7 -&amp;gt; Fmin7).&lt;/p&gt;
+
+&lt;p&gt;Alla nona battuta possiamo trovare invece il VIb7, che sarebbe la sostituzione a tritono del V/V. In Cm ad esempio possiamo trovare il Ab7 che sarebbe sostituzione a tritono del D7 (che è il V del V ovvero di G7).&lt;/p&gt;
+
+&lt;p&gt;Alla dodicesima battuta invece di un I minore possiamo trovare un V7 che torna al I minore.&lt;/p&gt;
+
+&lt;p&gt;Mettendo insieme queste modifiche:&lt;/p&gt;
+
+&lt;p&gt;Cmin7 – Cmin7 – Cmin7 – C7&lt;br /&gt;
+Fmin7 – Fmin7 – Cmin7 – Cmin7&lt;br /&gt;
+Ab7- G7 – Cmin7 – G7 (Cmin7)&lt;/p&gt;
+
+&lt;p&gt;Nei minor blues molto spesso invece del primo grado si può trovare la successione I – II – IIIb. Quindi in Cmin le prime quattro battute possiamo trovarle con questa progressione:&lt;/p&gt;
+
+&lt;p&gt;Cmin7 Dmin7 – Ebmaj7 Dmin7 – Cmin7 Dmin7 – Ebmaj7 Dmin7&lt;/p&gt;
+
+&lt;p&gt;Ricordiamo che nell’armonizzazione della scala minore i primi due gradi sono dei minor7 mentre il terzo grado è un major7, motivo per cui la progressione è I minore II minore e bIII maggiore.&lt;/p&gt;
+
+&lt;p&gt;Questa progressione si può trovare ad esempio in Lonnie’s Lament di Coltrane.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusione&quot;&gt;Conclusione&lt;/h2&gt;
+
+&lt;p&gt;Il blues ha subito grandi variazioni nel corso degli anni, cambiando la struttura armonica, rendendola più complessa fino ad arrivare ad avere una struttura armonica molto complessa con Coltrane.&lt;/p&gt;
+
+&lt;p&gt;I due artisti che più hanno rivoluzionato la struttura del Blues troviamo Charlie Parker (“Il sassofono perfetto in grado di liberare dalla sventura”) e John Coltrane.&lt;br /&gt;
+Consiglio l’ascolto di entrambi i musicisti in modo da capire come hanno sviluppato le strutture armoniche nel corso degli anni.&lt;/p&gt;
+
+&lt;p&gt;Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a &lt;strong&gt;commentare qua sotto&lt;/strong&gt;!&lt;/p&gt;</content><author><name></name></author><summary type="html">In questo articolo analizzeremo la struttura armonica a partire da quello che è definito blues arcaico (country blues o urban blues) per arrivare alle sue forme più complesse degli anni 60 passando dal mito di Parker a quello di Coltrane.</summary></entry><entry><title type="html">Lord of the Chords: The Punniest Music Theory Card Game! – Ora disponibile su Kickstarter</title><link href="http://localhost:4000/armonia/2019/02/11/lord-of-the-chords.html" rel="alternate" type="text/html" title="Lord of the Chords: The Punniest Music Theory Card Game! – Ora disponibile su Kickstarter" /><published>2019-02-11T12:59:30+01:00</published><updated>2019-02-11T12:59:30+01:00</updated><id>http://localhost:4000/armonia/2019/02/11/lord-of-the-chords</id><content type="html" xml:base="http://localhost:4000/armonia/2019/02/11/lord-of-the-chords.html">&lt;p&gt;Dopo una lunga attesa il gioco Lord of the Chords è arrivato su &lt;a href=&quot;https://d416e66f.kckb.st&quot;&gt;kickstarter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lord of the Chords è un gioco di carte basato sulla teoria musicale creato da 3 ragazzi di Singapore.&lt;br /&gt;
+Con lo sbarco su kickstarter inizierà la campagna di crowfounding che porterà questo concept alla realizzazione.&lt;/p&gt;
+
+&lt;p&gt;La timeline prevede la fine della campagna di crowfound il 20 Marzo.&lt;br /&gt;
+Nei successivi 2 mesi verrà finalizzato il design delle carte, saranno sistemate le traduzioni (sarà disponibile in Inglese, spagnolo e tedesco) e completato il regolamento.&lt;br /&gt;
+Dal 20 Maggio quindi si passerà alla produzione, che terminerà il 1 Agosto.&lt;br /&gt;
+Avrà quindi inizio la spedizione, che secondo le loro stime avverrà in 1-2 mesi.&lt;br /&gt;
+Il gioco potrebbe essere nelle vostre mani a Ottobre 2019!&lt;/p&gt;
+
+&lt;h2 id=&quot;bello-ma-come-si-gioca&quot;&gt;Bello ma… come si gioca?&lt;/h2&gt;
+
+&lt;p&gt;Oltre alla pagina su kickstarter potete trovare &lt;a href=&quot;https://docs.google.com/document/d/1wF0IMYhX27taHDed8E2zdkl9ChvBTykT-S3FSa7KdLg/edit&quot;&gt;qui&lt;/a&gt; l’attuale regolamento, che verrà costantemente aggiornato.&lt;/p&gt;
+
+&lt;p&gt;L’obbiettivo del gioco è creare accordi diatonici alla tonalità in cui ci troviamo. Ogni volta che un giocatore crea un accordo ottiene una &lt;em&gt;time signature&lt;/em&gt;, il primo che ne ottiene 3 vince.&lt;/p&gt;
+
+&lt;p&gt;Questo è sicuramente un ottimo metodo per memorizzare le triadi che si ottengono su ogni grado della scala, per tutte e 12 le tonalità!&lt;/p&gt;
+
+&lt;p&gt;Ovviamente il gioco è ben più complesso di così, in quanto oltre alle note sono disponibili delle azioni che metteranno in difficoltà te e il tuo avversario!&lt;br /&gt;
+Per maggiori informazioni vi consiglio di consultare il &lt;a href=&quot;https://docs.google.com/document/d/1wF0IMYhX27taHDed8E2zdkl9ChvBTykT-S3FSa7KdLg/edit&quot;&gt;regolamento&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;si-ma-cosa-posso-aquistare&quot;&gt;Si ma… cosa posso aquistare?&lt;/h2&gt;
+
+&lt;p&gt;Al momento è possibile prenotare, in early bird, 3 differenti package: minor edition, major package e advanced package.&lt;/p&gt;
+
+&lt;p&gt;La minor edition ha un costo minimo di 50$ (33 euro) e contiene il gioco Lord of the Chords.&lt;br /&gt;
+Il major package, che ha un costo minimo di 83$ (54 euro), contiene, oltre al gioco, l’espansione “Who let the chords out”.&lt;br /&gt;
+L’advanced package invece, oltre a quello che contengono i precedenti package, avrà al suo interno 5 card custom, la menzione nel regolamento e la possibilità di fare una chiamata Skype con i creatori del gioco. Questo package ha un costo nettamente superiore rispetto agli altri due, si parte infatti da 288$, circa 188 euro.&lt;/p&gt;
+
+&lt;p&gt;Su kickstarter, in poche ore, sono già stati raccolti più di 20ila euro!&lt;/p&gt;
+
+&lt;p&gt;Il gioco risulta essere veramente interessante, sarà la volta buona che si potrà insegnare/imparare la teoria musicale divertendosi?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/photo_2019-02-08_12-09-33.jpg&quot; alt=&quot;Come on it's not music theory!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Se volete leggere qualcosa di più su &lt;strong&gt;Lord of the Chords&lt;/strong&gt; e i suoi creatori vi rimando a questo articolo di medium scritto da uno dei creatori: &lt;a href=&quot;https://medium.com/@jonathanng/i-hated-music-theory-how-i-ended-up-creating-a-music-theory-card-game-musicians-love-ee857ea3c16d&quot;&gt;I Hated Music Theory?. ?How I Ended Up Creating A Music Theory Card Game Musicians Love&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;E’ un progetto che sicuramente vale la pensa sostenere, se siete interessati vi rimando quindi alla pagina di &lt;a href=&quot;https://d416e66f.kckb.st&quot;&gt;kickstarter&lt;/a&gt; dove potrete acquistare uno dei 3 package sopra menzionati, oppure semplicemente sostenere il progetto.&lt;/p&gt;
+
+&lt;p&gt;E adesso, non ci resta che attendere Ottobre!&lt;/p&gt;</content><author><name></name></author><summary type="html">Dopo una lunga attesa il gioco Lord of the Chords è arrivato su kickstarter.</summary></entry></feed>

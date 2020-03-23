@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>iskyd.it - Dallo Sviluppo al Deploy | Isky – Musica e Tech</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="iskyd.it - Dallo Sviluppo al Deploy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?" />
+<meta property="og:description" content="Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?" />
+<link rel="canonical" href="http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html" />
+<meta property="og:url" content="http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html" />
+<meta property="og:site_name" content="Isky – Musica e Tech" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-09T12:00:41+02:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"iskyd.it - Dallo Sviluppo al Deploy","dateModified":"2019-05-09T12:00:41+02:00","datePublished":"2019-05-09T12:00:41+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html"},"url":"http://localhost:4000/programmazione/2019/05/09/sviluppo-deploy-iskyd.html","description":"Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Isky – Musica e Tech" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Isky – Musica e Tech</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">iskyd.it - Dallo Sviluppo al Deploy</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-05-09T12:00:41+02:00" itemprop="datePublished">May 9, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Che tecnologia c’è dietro a questo sito web? Qual è il linguaggio di programmazione scelto? Che database utilizza? Che webserver? Come è gestito il deploy?</p>
+
+<p>Possiamo scomporre tutto in tre macro categorie: <strong>Applicazione</strong>, <strong>Database</strong>, <strong>Deploy</strong>.</p>
+
+<h2 id="applicazione"><strong>Applicazione</strong></h2>
+
+<p>L’applicazione è scritta in <strong>python</strong> utilzzando il web framework <strong>Flask</strong>. Di conseguenza il template engine utilizzato è <strong>Jinja</strong> e il WSGI è <strong>Werkzeug</strong>. Flask, Jinja e Werkzeug condividono lo stesso autore: Armin Ronacher.<br />
+Ulteriori estensioni utilizzate sono:</p>
+
+<ul>
+  <li>Flask-Admin: per tutta la gestione CRUD delle entità (articoli, categorie, tag…)</li>
+  <li>Flask-Login: per gestire il security della parte admin</li>
+  <li>Flask-WTF: per gestire i form</li>
+  <li>Flask-SQLAlchemy: integrazione di SQL-Alchemy in flask</li>
+  <li>click: per i comandi (inizializzazione database, generazione sitemap, generazione feedRss, creazione utenti ecc…)</li>
+</ul>
+
+<p>La scelta dell’ORM è ricaduta su SQLAlchemy per varie ragioni tra cui, le sue potenzialità, la community, il supporto ai principali database (nella fase di sviluppo non avevo ancora deciso che database utilizzare) e l’integrazione immediata con Flask. </p>
+
+<p>Per quanto riguarda la parte frontend è stato utilizzato, come dicevo precedentemente, Jinja come template engine, jquery come utilities javascript e bootstrap come framework css.</p>
+
+<p>JQuery è stato utilizzato solo perchè è una dipendenza di altre librerie che ho utilizzato (bootstrap ad esempio). Essendo molto limitato, nel mio caso, l’utilizzo di javascript avrei evitato l’utilizzo di JQuery.</p>
+
+<p>I file statici sono gestiti tramite gulp in modo da avere un unico file css e un unico file js.<br />
+Tutti gli assets infatti (css e js) vengono concatenati e successivamente minificati tramite gulp, in modo da ridurre il numero e la dimensione dei file statici.</p>
+
+<h2 id="database"><strong>Database</strong></h2>
+
+<p>Inizialmente la scelta del database era ricaduta su un database NoSQL (mongodb molto probabilmente) in quanto pensavo di gestire anche i commenti degli articoli.<br />
+Sarebbe stato molto comodo infatti estrarre direttamente l’articolo e i commenti ad esso associati evitando JOIN. <br />
+Successivamente ho deciso di appoggiarmi a disqus per la gestione dei commenti e per cui, non avendo più necissità di un database NoSQL la scelta è ricaduta su un database relazionale.<br />
+Non ho scelto da subito mysql, anzi il sito è stato sviluppato con sqlite per poi passare a mysql solamente in produzione, grazie a SQLAlchemy.</p>
+
+<p>Ho scelto mysql per comodità, performance, facilità di gestione. Non avevo inoltre necessità di portabilità, grande punto a favore di sqlite.</p>
+
+<h2 id="deploy"><strong>Deploy</strong></h2>
+
+<p>L’applicativo è eseguito all’interno di un container docker. Ormai docker è un mio MUST per ogni applicativo, indipendentemente dalla tecnologia scelta. I vantaggi sono infiniti: utilizzo dello stesso ambiente in sviluppo e in produzione, possibilità di deployare più container senza doversi preoccupare di niente, lanciare l’applicativo in maniere automatica, CI ecc..</p>
+
+<p>Il progetto utilizza, ovviamente, GIT (versionamento) ed è hostato su Github (da quando mamma Microsoft ha acquistato github il numero di repository privati senza pagare è diventato illimitato &lt;3). <br />
+L’immagine docker è invece pushata sul docker hub.<br />
+Ed è proprio qui che la magia inizia. Docker hub consente di effettuare build dell’immagine in maniera automatica quando viene rilevato un nuovo commit su Github. <br />
+Tramite watchtower inoltre è possibile redeployare il container (pull della nuova immagine e run del container) in maniera automatica, quando viene rilevata un aggiornamento dell’immagine sul registry. <br />
+In questo modo la mia unica preoccupazione è quella di fare un push su github, tutto il resto è automatico. Docker hub si occuperà di creare la nuova immagine e watchtower (che gira in un container sulla stessa macchina dell’applicativo) si occuperà di fare redeploy. Fantastic!</p>
+
+<p>All’interno del container il nostro http server è gunicorn mentre sulla macchina è apache che riceve la richiesta e fa proxy pass sulla porta esposta dal container, su cui è in ascolto gunicorn.<br />
+La parte più complessa, di caching, è su apache.<br />
+Apache si occupa infatti di cachare (tramite mod_cache_disk) tutte le richieste tranne quelle alle pagine di admin. <br />
+Inoltre per tutte le pagine ho scelto un expire di 1 giorno mentre per le immagini di 1 mese. Questa scelta è indicativa per le mie necessità.<br />
+Apache oltre al caching si occupa anche di gestire la sicurezza delle richieste attraverso il protocollo https. Tutte le richieste infatti faranno redirect ad https e solo in quel caso verranno servite. I certificati SSL utilizzati sono quelli di Let’s Encrypt.</p>
+
+<h2 id="conclusione"><strong>Conclusione</strong></h2>
+
+<p>Le scelte principali che ho fatto, quindi, riguardano il linguaggio di programmazione (e di conseguenza un web framework relativo), il database, l’utilizzo di docker (e tutta l’automazione del deploy) e di apache (principalmente del caching).<br />
+Tutte queste scelte sono fatte in base alle mie necessità che quindi potrebbero essere diverse dalle vostre.<br />
+Indubbiamente l’utilizzo di docker è un MUST nel 2019.<br />
+Un’ORM come SQLAlchemy lo è altrettanto.<br />
+Automatizzare il deploy forse lo è ancora di più!</p>
+
+<p>Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a <strong>commentare qua sotto</strong>!</p>
+
+  </div><a class="u-url" href="/programmazione/2019/05/09/sviluppo-deploy-iskyd.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Isky – Musica e Tech</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Isky – Musica e Tech</li><li><a class="u-email" href="mailto:careddumattia@gmail.com">careddumattia@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/iskyd"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">iskyd</span></a></li><li><a href="https://www.twitter.com/iskypitts"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">iskypitts</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

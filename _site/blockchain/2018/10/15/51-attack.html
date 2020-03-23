@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The 51% Attack | Isky – Musica e Tech</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="The 51% Attack" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack. Cerchiamo quindi di capire come funziona questo attacco" />
+<meta property="og:description" content="Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack. Cerchiamo quindi di capire come funziona questo attacco" />
+<link rel="canonical" href="http://localhost:4000/blockchain/2018/10/15/51-attack.html" />
+<meta property="og:url" content="http://localhost:4000/blockchain/2018/10/15/51-attack.html" />
+<meta property="og:site_name" content="Isky – Musica e Tech" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-15T13:50:56+02:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"The 51% Attack","dateModified":"2018-10-15T13:50:56+02:00","datePublished":"2018-10-15T13:50:56+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blockchain/2018/10/15/51-attack.html"},"url":"http://localhost:4000/blockchain/2018/10/15/51-attack.html","description":"Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack. Cerchiamo quindi di capire come funziona questo attacco","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Isky – Musica e Tech" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Isky – Musica e Tech</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">The 51% Attack</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-15T13:50:56+02:00" itemprop="datePublished">Oct 15, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Se avete letto qualche articolo sulla blockchain o vi siete interessati a qualche criptovaluta come BTC, Eth o qualsiasi altra, vi sarete sicuramente imbattuti nel 51% attack.<br />
+Cerchiamo quindi di capire come funziona questo “attacco”.</p>
+
+<p><em>Se volete fare un ripasso veloce sulla blockchain potete leggere <a href="http://iskyd.it/i-bitcoin-non-sono-la-blockchain/">questo articolo</a>.</em></p>
+
+<p>Uno dei pilastri principali della blockchain è il protocollo di consenso.<br />
+Se qualcuno volesse modificare un blocco, oltre che modificare tutti i blocchi successivi (in quanto cambierebbe l’hash e quindi si romperebbe la chain), dovrebbe modificare la blockchain su più della metà dei nodi, o questi si accorgerebbero di una versione della blockchain diversa e farebbero un resync per riavere quella corretta.</p>
+
+<p>Questo sopra descritto però <strong>non è il 51% attack</strong>. <strong>Quando parliamo del 51% attack non facciamo riferimento al 51% del numero dei nodi ma al 51% dell’hashrate totale.</strong></p>
+
+<p>Vediamo quindi come funziona.</p>
+
+<p>Supponiamo di avere un gruppo di miner che ha un hashrate pari a 1 Th/s. Questi aggiungerebbero normalmente i blocchi alla blockchain.<br />
+A questo punto un altro gruppo di miner malintenzionati con un totale di 1,1 Th/s decide di aggiungersi alla blockchain e quindi copiano l’attuale blockchain e iniziano a fare mining.<br />
+<em>Nell’esempio abbiamo il primo gruppo con 1Th/s e il secondo gruppo con 1,1 Th/s, ricordiamo basta avere il 51% della potenza totale.</em></p>
+
+<p>Una volta copiata la blockchain i nostri malintenzionati decidono di chiudere la connessione con il primo gruppo di miners.<br />
+Entrambi i gruppi continuano a minare ma quello che succede è che il gruppo di malintenzionati (avendo un hashrate maggiore) avrà sempre una blockchain più lunga rispetto al primo gruppo di miners.</p>
+
+<p>A questo punto i malintenzionati decidono di riaprire la connessione. Cosa succede?</p>
+
+<p><strong>La regola d’oro è: la blockchain più lunga vince.</strong></p>
+
+<p>Quindi tutti i blocchi che sono stati aggiunti dal primo gruppo di miners sarebbero considerati invalidi e tutte le transazioni al loro interno verrebbero rilasciate nuovamente all’interno della mempool e i miners iniziali sincronizzerebbero la blockchain con quella più lunga.</p>
+
+<p>Interessante, ma che vantaggio ne traggono i malintenzionati?</p>
+
+<p>Qui entra in gioco il <strong>double spend problem</strong>.</p>
+
+<p>I malintenzionati dall’inizio, non come miners, ma come nodi hanno acquistato dei beni. Questa transazione è stata quindi aggiunta a un blocco della blockchain del primo gruppo di miners (i miners malintenzionati non prendono dalla mempool questa transazione proprio per avvantaggiarsi del double spend problem).<br />
+Supponiamo che uno dei malintenzionati abbia acquistato un tacchino da combattimento per 0.5 BTC. Una volta che la transazione è considerata valida il malintenzionato riceve il suo tacchino da combattimento.</p>
+
+<p>Ecco quindi che quando il blocco in cui è presente la transazione viene considerato invalido questa transazione torna nella mempool, pronta per essere aggiunta a un nuovo blocco. Quindi il malintenzionato ha il suo tacchino da combattimento e la sua transazione è ancora nella mempool. Questo è il double spend problem in quanto quella transazione verrà spesa nuovamente.</p>
+
+<p>Nel protocollo bitcoin una transazione deve avere 6 conferme per essere considerata valida. Ogni blocco (compreso il blocco stesso dove è aggiunta la transazione) aggiunto alla blockchain dopo di lui è considerata una conferma. Una volta che la transazione ha ricevuto 6 conferme viene quindi considerata valida e sicura per il double spend problem.</p>
+
+<p>Torniamo quindi un secondo alla blockchain del primo gruppo di miners. Le transazioni contenute negli ultimi 5 blocchi, al momento del resync delle due blockchain, non hanno il problema del double spend in quando ancora non sono considerate valide perchè hanno meno di 6 conferme.</p>
+
+<h3 id="conclusioni">Conclusioni</h3>
+
+<p>Abbiamo visto quindi che il 51% attack fa riferimento all’hashrate e non al numero di miners stessi. Al momento non c’è niente di illegale in questo attacco.</p>
+
+<p>E’ improbabile che questo accada in blockchain come quella dei BTC o di altre criptovalute molto usate, ma può capitare per le criptovalute più “piccole”.</p>
+
+<p>Un altro importante punto è che i miners traggono vantaggio sempre in quanto guadagnano le tasse di ogni transazione più il rewards per ogni blocco, quindi perchè truffare e far morire una criptovaluta quando si può guadagnare da essa?</p>
+
+<p>Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a <strong>commentare qua sotto</strong>!</p>
+
+  </div><a class="u-url" href="/blockchain/2018/10/15/51-attack.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Isky – Musica e Tech</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Isky – Musica e Tech</li><li><a class="u-email" href="mailto:careddumattia@gmail.com">careddumattia@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/iskyd"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">iskyd</span></a></li><li><a href="https://www.twitter.com/iskypitts"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">iskypitts</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Snake in pure Javascript! | Isky – Musica e Tech</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Snake in pure Javascript!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Oggi vedremo step-by-step come possiamo creare Snake usando solo e soltanto Javascript, nessuna libreria esterna" />
+<meta property="og:description" content="Oggi vedremo step-by-step come possiamo creare Snake usando solo e soltanto Javascript, nessuna libreria esterna" />
+<link rel="canonical" href="http://localhost:4000/programmazione/2018/10/10/snake-pure-js.html" />
+<meta property="og:url" content="http://localhost:4000/programmazione/2018/10/10/snake-pure-js.html" />
+<meta property="og:site_name" content="Isky – Musica e Tech" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-10T13:48:04+02:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Snake in pure Javascript!","dateModified":"2018-10-10T13:48:04+02:00","datePublished":"2018-10-10T13:48:04+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programmazione/2018/10/10/snake-pure-js.html"},"url":"http://localhost:4000/programmazione/2018/10/10/snake-pure-js.html","description":"Oggi vedremo step-by-step come possiamo creare Snake usando solo e soltanto Javascript, nessuna libreria esterna","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Isky – Musica e Tech" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Isky – Musica e Tech</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Snake in pure Javascript!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-10T13:48:04+02:00" itemprop="datePublished">Oct 10, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Oggi vedremo step-by-step come possiamo fare un semplice giochino, come Snake, usando solo e soltanto Javascript, nessuna libreria esterna o altro.</p>
+
+<p>Potete trovare il codice completo <a href="https://github.com/iskyd/snakejs">qua</a> e potete provare la demo su <a href="https://codepen.io/isky/full/mmGVXO">codepen</a>.</p>
+
+<p>Iniziamo creando due file, index.html (che sarà la nostra pagina) e snake.js che sarà il nostro codice js.</p>
+
+<p>index.html</p>
+
+<pre><html>
+<head>
+    <title>Snake</title>
+    <style>canvas { background: #000; display: block; margin: 0 auto; }</style>
+</head>
+<body>
+    <canvas id="snake" width="480" height="320"></canvas>
+</body>
+<script src="./snake.js"></script>
+<script>
+</script>
+</html></pre>
+
+<p>Il canvas è il nostro elemento grafico su cui andremo a “disegnare” i nostri elementi.<br />
+Tramite css impostiamo lo sfondo del canvas nero e centriamo il canvas nella pagina.<br />
+Alla fine includiamo il file snake.js.</p>
+
+<p>Ora che nel DOM abbiamo l’elemento canvas per scriverci sopra dobbiamo prenderlo nel nostro script js e creare una variabile ctx, che useremo per aggiungere il render 2D.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");</pre>
+
+<p><em>Vi consiglio di provare voi stessi step-by-step in modo da capire quello che veramente succede.</em></p>
+
+<p>Per prima cosa vogliamo disegnare il serpente, che all’inizio si troverà in basso al centro del canvas. Inizialmente sarà un quadrato di dimensioni 10x10 quindi definiamo qualche variabile.</p>
+
+<pre>var x = canvas.width/2;
+var y = canvas.height-30;
+var snakeHeight = 10;
+var snakeWidth = 10;</pre>
+
+<p>x e y rappresentano la posizione del serpente mentre snakeHeight e snakeWidth la sua altezza e larghezza.<br />
+Ora ci serve una funzione che disegna il serpente sul canvas in base alla sua posizione (x e y) e alle sue dimensioni (snakeHeight e snakeWidth).</p>
+
+<p><em>Creiamo una funzione perchè questa dovrà continuamente essere chiamata durante tutto il gioco.</em></p>
+
+<pre>function drawSnake() {
+    ctx.beginPath();
+    ctx.rect(x, y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}</pre>
+
+<p>Tutte le nostre modifiche a ctx (il contesto 2D del canvas) devono essere contenute tra beginPath(), che si occupa di inizializzare il path o di resettare quello attuale, e closePath() che si occupa di creare un path tra il punto attuale e il punto iniziale.</p>
+
+<p>Cos’è un path? Un canvas path è semplicemente una serie di punti con le istruzioni su come unire questi punti.</p>
+
+<p>La funzione rect si occupa di creare appunto un rettangolo (che inizialmente sarà un quadrato) delle dimensioni e nella posizione indicata.</p>
+
+<p>La funzione fill si occupa di “riempire” il rettangolo disegnato con il colore specificato da fillStyle (nel nostro caso bianco).</p>
+
+<p><em>Attenzione! A questo punto nel vostro canvas non vedrete niente perchè la funzione drawSnake non è ancora mai stata chiamata! Provate ad aggiungerla alla fine e vedrete che il quadrato che rappresenta il serpente comparirà.</em></p>
+
+<p>Una volta disegnato il serpente vogliamo disegnare il cibo. Il cibo comparirà sempre in una posizione casuale del canvas e sarà sempre di dimensioni 10x10. Applichiamo quindi lo stesso concetto visto per il cibo.</p>
+
+<pre>var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width) + 1;
+var foodY = Math.floor(Math.random() * canvas.height) + 1;</pre>
+
+<pre>function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}</pre>
+
+<p>Come vedete abbiamo fatto la stessa identica cosa di prima.<br />
+La posizione del cibo foodX e foodY sono due posizioni casuali, li moltiplichiamo rispettivamente per canvas.width e canvas.height in modo che essi non vengano disegnati “fuori” dal canvas che vediamo sulla pagina.</p>
+
+<p>Mettiamo ora tutto insieme quello che abbiamo fatto.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var snakeHeight = 10;
+var snakeWidth = 10;
+var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width) + 1;
+var foodY = Math.floor(Math.random() * canvas.height) + 1;
+function drawSnake() {
+    ctx.beginPath();
+    ctx.rect(x, y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+drawSnake();
+drawFood();</pre>
+
+<p>Se adesso aprite la pagina index.html nel browser vedrete che compariranno i due quadrati che rappresentano il nostro serpente (in basso al centro) e il cibo in una posizione casuale.<br />
+Quello che può succedere però è che il cibo venga stampato fuori dal canvas per metà della sua grandezza (se continuatate a refreshare la pagina prima o poi vi troverete in questa situazione, ma se non avete voglia di sfidare il Math.random riponete in me la vostra fiducia).</p>
+
+<p>Perchè questo succede? Succede perchè come x e y del cibo abbiamo messo al massimo la dimensione del canvas. Se quindi ci esce quella come posizione il punto centrale del cibo sarebbe sull’estremo della x o della y e quindi metà verrebbe disegnato dentro e l’altra metà fuori. Per correggere questo problema sottraiamo metà della dimensione del cibo dalla posizione massima della x e della y.</p>
+
+<pre>Math.floor(Math.random() * canvas.width - (foodWidth / 2)) + 1;
+Math.floor(Math.random() * canvas.height - (foodHeight / 2)) + 1;</pre>
+
+<p>Il prossimo passo sarà far muovere il serpente. Quello che faremo sarà chiamare una funziona draw() ogni 10 millisecondi che si occuperà di disegnare il serpente e il cibo.</p>
+
+<pre>function draw() {
+    drawSnake();
+    drawFood();
+    y--;
+}
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>Come vedete diminuiamo ogni volta la posizione della y del serpente in modo che esso si sposti verso l’alto.<br />
+Provate ad aggiornare la pagina con il nuovo codice inserito, vedrete che ogni 10 millisecondi viene disegnato un nuovo quadrato che rappresenta il serpente ma il vecchio quadrato non viene cancellato.<br />
+Aggiungiamo quindi all’inizio della funziona draw() il clear del canvas in modo che tutto quello disegnato sopra venga rimosso.</p>
+
+<pre>function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawSnake();
+    drawFood();
+    y--;
+}
+
+var interval = setInterval(draw, 10);
+
+</pre>
+
+<p>La funzione clearRect si occuperà, come abbiamo detto, di rimuovere dal canvas tutti gli oggetti disegnati nella parte che gli specifichiamo (nel nostro caso tutto visto che gli passiamo la grandezza e l’altezza massima).</p>
+
+<p>Anche se non si muove e non si vede, visto che foodX e foodY rimangono sempre uguali, anche il cibo viene rimosso e ridisegnato, nello stesso punto, ogni 10 millisecondi.</p>
+
+<p>Come avrete notato il serpente si sposterà verso l’alto finchè non supera l’altezza massimo del canvas e scompare. Penseremo a questo dopo, per ora vogliamo fare in modo che il serpente cambi direzione in base a che tasto sulla tastiera schiacciamo (freccia sinistra, freccia destra, freccia in alto e freccia in basso).</p>
+
+<p>Per fare ciò dobbiamo aggiungere un evento che verrà eseguito ogni volta che viene schiacciato un tasti sulla tastiera. Filtreremo poi i tasti che ci interessano.</p>
+
+<pre>function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+    //left
+    } 
+    else if(e.keyCode == 38) {
+    //up
+    } 
+    else if(e.keyCode == 39) {
+        //rigth
+    } 
+    else if(e.keyCode == 40) {
+        //down
+    }
+}</pre>
+
+<p>Il keyCode 37 corrisponde alla freccia a sinistra e così via come indicato dai commenti nel codice sopra.<br />
+Quello che vogliamo fare ora è salvare la direzione scelta in una variabile in modo da usarla successivamente nella funziona draw(), invece che fare y– come facciamo ora.</p>
+
+<pre>var direction = 1;
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+    direction = 3;
+    } 
+    else if(e.keyCode == 38) {
+    direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        direction = 2;
+    }
+}</pre>
+
+<p>Ora creiamo una funzione changePosition() che si occuperà di modificare la posizione del serpente in base alla direzione scelta. Se per esempio viene schiacciata la freccia in giù sappiamo che il valore dell’ordinata (ovvero y). Sappiamo inoltre che dovendo muoversi verso il basso il valore dell’ordinata deve aumentare.</p>
+
+<pre>function changePosition() {
+    if(direction == 1) {
+        y--;
+    }
+    else if(direction == 2) {
+        y++;
+    } 
+    else if(direction == 3) {
+        x--;
+    }
+    else if(direction == 4) {
+        x++;
+    }
+}</pre>
+
+<p>Mettiamo ora tutto insieme e vediamo cosa succede.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var snakeHeight = 10;
+var snakeWidth = 10;
+var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width - (foodWidth / 2)) + 1;
+var foodY = Math.floor(Math.random() * canvas.height - (foodHeight / 2)) + 1;
+var direction = 1
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+        direction = 3;
+    } 
+    else if(e.keyCode == 38) {
+        direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        direction = 2;
+    }
+}
+
+function drawSnake() {
+    ctx.beginPath();
+    ctx.rect(x, y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawSnake();
+    drawFood();
+    changePosition();
+}
+
+function changePosition() {
+    if(direction == 1) {
+        y--;
+    }
+    else if(direction == 2) {
+        y++;
+    } 
+    else if(direction == 3) {
+        x--;
+    }
+    else if(direction == 4) {
+        x++;
+    }
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>Il serpente inizierà a muoversi verso l’alto (la variabile direction viene inizializzata di default a 1 che corrisponde a un movimento verso l’alto).<br />
+Adesso attraverso le frecce direzionali possiamo decidere in che direzione il serpente si deve muovere.<br />
+Abbiamo però ancora un enorme problema, il serpente quando raggiunge la dimensione massima del canvas esce da esso.<br />
+Quello che vogliamo fare invece è che in caso di collisione con gli estremi del canvas il giocatore perde la partita e tutto rinizia da capo.<br />
+Creiamo quindi una funzione checkCollision() che ad ogni iterazione (nella funzione draw()) si occuperà di controllare se il serpente è al di fuori della dimensione massima, e quindi la partita viene persa, o all’interno, e quindi il serpente continua a muoversi.</p>
+
+<pre>function checkCollision() {
+    if(y &gt; canvas.height || y &lt; 0 || x &lt; 0 || x &gt; canvas.width) {
+        //collision detect call restart function
+    }
+}</pre>
+
+<p>E’ molto semplice verificare se il serpente è fuori dal canvas, basta controllare se la sua posizione sia fuori dall’altezza / larghezza massima (canvas.height / canvas.width) o sia fuori dall’altezza / larghezza minima (0 / 0).</p>
+
+<p>Quello che vogliamo fare quando troviamo una collisione è chiamare una funzione restart() che si occuperà di cambiare la posizione del serpente alla posizione iniziale e rimettere la sua direzione a 1.</p>
+
+<pre>function restart() {
+    x = canvas.width/2;
+    y = canvas.height-30;
+    direction = 1;
+}</pre>
+
+<p>Mettiamo ora tutto insieme e proviamo.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var snakeHeight = 10;
+var snakeWidth = 10;
+var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width - (foodWidth / 2)) + 1;
+var foodY = Math.floor(Math.random() * canvas.height - (foodHeight / 2)) + 1;
+var direction = 1
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+        direction = 3;
+    } 
+    else if(e.keyCode == 38) {
+        direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        direction = 2;
+    }
+}
+
+function drawSnake() {
+    ctx.beginPath();
+    ctx.rect(x, y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawSnake();
+    drawFood();
+    checkCollision();
+    changePosition();
+}
+
+function changePosition() {
+    if(direction == 1) {
+        y--;
+    }
+    else if(direction == 2) {
+        y++;
+    } 
+    else if(direction == 3) {
+        x--;
+    }
+    else if(direction == 4) {
+        x++;
+    }
+}
+
+function checkCollision() {
+    if(y &gt; canvas.height || y &lt; 0 || x &lt; 0 || x &gt; canvas.width) {
+        restart();
+    }
+}
+
+function restart() {
+    x = canvas.width/2;
+    y = canvas.height-30;
+    direction = 1;
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>Se provate ora ad uscire dal canvas vedrete che la posizione del serpente e la sua direzione ritorneranno ad essere quelle iniziali.</p>
+
+<p>Tutto molto bello. Cerchiamo ora di rendere il nostro gioco almeno un pò divertente.<br />
+Quando il serpente collide con il cibo dobbiamo fare in modo di aumentare la sua dimensione e cambiare la posizione del cibo in un altra posizione casuale.</p>
+
+<p>Creiamo quindi una funzione checkCollisionWithFood() che si occuperà di verificare se il serpente ha colliso con il cibo, allo stesso modo in cui abbiamo fatto per la collisione con i bordi del canvas.</p>
+
+<pre>var precision = 5;
+function checkCollisionWithFood() {
+if((x - precision &lt; foodX  &amp;&amp; foodX &lt; x + precision) &amp;&amp; (y - precision &lt; foodY &amp;&amp; foodY &lt; y + precision)) {
+        //collision detect
+    }
+}</pre>
+
+<p>La variabile precision ci serve per fare in modo che il serpente non sia esattamente nella stessa posizione del cibo, sarebbe impossibile, ma che sia a un massimo di “precision” distante.<br />
+Provate ad aumentare o diminuire la precision per vedere cosa succede.</p>
+
+<p>Il prossimo step sarà quello di spostare il cibo in una nuova posizione quando si verifica la collisione.</p>
+
+<pre>function checkCollisionWithFood() {
+    if((x - precision &lt; foodX  &amp;&amp; foodX &lt; x + precision) &amp;&amp; (y - precision &lt; foodY &amp;&amp; foodY &lt; y + precision)) {
+        foodX = Math.floor(Math.random() * canvas.width) + 1;
+        foodY = Math.floor(Math.random() * canvas.height) + 1;
+    }
+}</pre>
+
+<p>In questo modo ogni volta che il serpente avrà una collisione con il cibo, quest’ultimo si sposterà in un nuovo punto casuale della mappa.<br />
+Un’altra cosa che vogliamo fare a mostrare sul canvas lo score attuale del giocatore.<br />
+Lo score aumenterà di 1 ogni volta che il cibo verrà “preso”.<br />
+Per questo definiamo una funzione drawScore() che chiameremo all’interno di draw() che scriverà il score sul canvas.</p>
+
+<pre>function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#b6b3b3";
+    ctx.fillText("Score: "+score, 8, 20);
+}</pre>
+
+<p>Impostiamo al contesto il font e il colore che vogliamo abbia la nostra scritta e lo scriviamo sul canvas nella posizione 8,20.</p>
+
+<p>Quello che dobbiamo fare è definire una variabile score e incrementarla ogni volta che troviamo una collisione con il cibo.<br />
+Aggiungiamo anche che al restart() lo score ritorna a 0.<br />
+Mettiamo tutto insieme.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var snakeHeight = 10;
+var snakeWidth = 10;
+var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width - (foodWidth / 2)) + 1;
+var foodY = Math.floor(Math.random() * canvas.height - (foodHeight / 2)) + 1;
+var direction = 1
+var score = 0
+var precision = 5
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+        direction = 3;
+    } 
+    else if(e.keyCode == 38) {
+        direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        direction = 2;
+    }
+}
+
+function drawSnake() {
+    ctx.beginPath();
+    ctx.rect(x, y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#b6b3b3";
+    ctx.fillText("Score: "+score, 8, 20);
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawSnake();
+    drawFood();
+    drawScore();
+    checkCollisionWithFood();
+    checkCollision();
+    changePosition();
+}
+
+function changePosition() {
+    if(direction == 1) {
+        y--;
+    }
+    else if(direction == 2) {
+        y++;
+    } 
+    else if(direction == 3) {
+        x--;
+    }
+    else if(direction == 4) {
+        x++;
+    }
+}
+
+function checkCollision() {
+    if(y &gt; canvas.height || y &lt; 0 || x &lt; 0 || x &gt; canvas.width) {
+        restart();
+    }
+}
+
+function checkCollisionWithFood() {
+    if((x - precision &lt; foodX  &amp;&amp; foodX &lt; x + precision) &amp;&amp; (y - precision &lt; foodY &amp;&amp; foodY &lt; y + precision)) {
+        foodX = Math.floor(Math.random() * canvas.width) + 1;
+        foodY = Math.floor(Math.random() * canvas.height) + 1;
+        score++
+    }
+}
+
+function restart() {
+    x = canvas.width/2;
+    y = canvas.height-30;
+    direction = 1;
+    score = 0
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>A questo punto il gioco funziona. Abbiamo aggiunto le collisioni con i bordi, possiamo prendere il cibo e il nostro score aumenta.<br />
+Manca ancora qualcosa. Il serpente non si ingrandisce quando mangia.<br />
+Vediamo di risolvere subito il problema!</p>
+
+<p>Dimentichiamo per un momento quello fatto prima e cerchiamo di capire come fare ad avere un serpente diventa sempre più grosso. Ovviamente avere solo una x e una y che descrivono la posizione del singolo quadrato non ci basta, ma dobbiamo avere un array di posizioni in modo che ognuna descriva quella del quadrato corrispondente.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var snake = [ {x: canvas.width/2, y: canvas.height-30} ]
+var snakeHeight = 10;
+var snakeWidth = 10;
+
+function drawSnake(element) {
+    ctx.beginPath();
+    ctx.rect(element.x, element.y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snake.forEach(function(element){
+        drawSnake(element)
+    })
+}
+
+draw();</pre>
+
+<p>Abbiamo usato la variabile snake che al suo interno contiene un array di oggetti. Ogni oggetto ha una x a una y che definiscono la posizione di quel quadrato.<br />
+Per disegnare tutto il serpente a questo punto usiamo un ciclo forEach in modo da disegnare ogni singolo quadrato.<br />
+Create un nuovo file snake2.js in cui incollate il codice qui sopra e modificate lo script che includete nell’index.html da snake.js a snake2.js.</p>
+
+<p>Provate ora a modificare la variabile snake in modo da aggiungere altri quadrati, ad esempio:</p>
+
+<pre>var snake = [ {x: canvas.width/2, y: canvas.height-30}, {x: canvas.width/2 - 10, y: canvas.height-30} ]</pre>
+
+<p>Riaggiungiamo parte del codice già scritta prima in modo da integrarla con questa nuova struttura.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var snake = [ {x: canvas.width/2, y: canvas.height-30} ]
+var snakeHeight = 10;
+var snakeWidth = 10;
+var direction = 1;
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+        direction = 3;
+    } 
+    else if(e.keyCode == 38) {
+        direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        direction = 2;
+    }
+}
+
+function drawSnake(element) {
+    ctx.beginPath();
+    ctx.rect(element.x, element.y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snake.forEach(function(element){
+        changePosition(element);
+        drawSnake(element);
+    })
+}
+
+function changePosition(element) {
+    if(direction == 1) {
+        element.y--;
+    }
+    else if(direction == 2) {
+        element.y++;
+    } 
+    else if(direction == 3) {
+        element.x--;
+    }
+    else if(direction == 4) {
+        element.x++;
+    }
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>Come vedete non è cambiato nulla se non l’utilizzo di un array per la posizione di ogni singolo pezzo del serpente.<br />
+Ora possiamo muovere il nostro serpente come prima ma con la nuova struttura dati.</p>
+
+<p>Proviamo adesso a cambiare il nostro snake aggiungedogli un pezzo.</p>
+
+<pre>var snake = [ {x: canvas.width/2, y: canvas.height-30}, {x: canvas.width/2, y: canvas.height-40} ]</pre>
+
+<p>In questo muovo tutti i pezzi si muovono…. ma non come volevamo.<br />
+Ovviamente non possiamo muovere ogni pezzo nella direzione scelta ma una volta scelta una nuova direzione dobbiamo muoverli uno per volta nella nuova direzione.<br />
+Come facciamo? Alla nostra struttura dati, oltre che alla x e alla y, aggiungiamo anche la direzione in modo che ogni singolo pezzo del serpente sia autonomo.</p>
+
+<pre>var snake = [ {x: canvas.width/2, y: canvas.height-30, direction: 1} ]</pre>
+
+<p>Quello che dobbiamo fare è quindi far si che quando la direzioni cambi solo il primo pezzo cambi la sua direzione, dopodichè, uno dopo l’altro, tutti gli altri pezzi cambieranno la loro direzione in base al pezzo precedente.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var snake = [ {x: canvas.width/2, y: canvas.height-30, direction: 1} ]
+var snakeHeight = 10;
+var snakeWidth = 10;
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+    snake[0].direction =  3;
+    } 
+    else if(e.keyCode == 38) {
+    snake[0].direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        snake[0].direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        snake[0].direction = 2;
+    }
+}
+
+function drawSnake(element) {
+    ctx.beginPath();
+    ctx.rect(element.x, element.y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snake.forEach(function(element){
+        changePosition(element);
+        drawSnake(element);
+    })
+}
+
+function changePosition(element) {
+    if(element.direction == 1) {
+        element.y--;
+    }
+    else if(element.direction == 2) {
+        element.y++;
+    } 
+    else if(element.direction == 3) {
+        element.x--;
+    }
+    else if(element.direction == 4) {
+        element.x++;
+    }
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 10);</pre>
+
+<p>A questo punto soltanto il primo pezzo cambierà direzione. Dobbiamo ora fare in modo che tutti i pezzi che seguono cambino la propria direzione in base al pezzo precedente.</p>
+
+<p>Per prima cosa modifichiamo la funzione changePosition() in modo che il pezzo si muova nella direzione specificata di una distanza pari alla sua dimensione.</p>
+
+<pre>function changePosition(element) {
+    if(element.direction == 1) {
+        element.y -= snakeWidth;
+    }
+    else if(element.direction == 2) {
+        element.y += snakeWidth;
+    } 
+    else if(element.direction == 3) {
+        element.x -= snakeHeight;
+    }
+    else if(element.direction == 4) {
+        element.x += snakeHeight;
+    }
+}</pre>
+
+<p>A questo punto ci serve una nuova funzione, changeDirection() che a ogni loop (all’interno della funzione draw()) modificherà la direzione del singolo pezzo in base che la sua direzione diventi uguale a quella del pezzo precedente.</p>
+
+<pre>function changeDirection(element, index) {
+    if(index != 0) {
+        var previousElement = snake[index - 1];
+        element.direction = previousElement.direction;
+    }
+}</pre>
+
+<p>Rimettiamo tutto insieme e usiamo un serpente composto da 3 pezzi.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var snake = [ {x: canvas.width/2, y: canvas.height-30, direction: 1}, {x: canvas.width/2, y: canvas.height-20, direction: 1}, {x: canvas.width/2, y: canvas.height-10, direction: 1} ]
+var snakeHeight = 10;
+var snakeWidth = 10;
+
+function keyDownHandler(e) {
+    if(e.keyCode == 37) {
+        snake[0].direction =  3;
+    } 
+    else if(e.keyCode == 38) {
+        snake[0].direction = 1;
+    } 
+    else if(e.keyCode == 39) {
+        snake[0].direction = 4;
+    } 
+    else if(e.keyCode == 40) {
+        snake[0].direction = 2;
+    }
+}
+
+function drawSnake(element) {
+    ctx.beginPath();
+    ctx.rect(element.x, element.y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snake.forEach(function(element, index){
+        changePosition(element);
+        drawSnake(element);
+    })
+    for(var i = snake.length - 1; i &gt;= 0; i--) {
+        changeDirection(snake[i], i);
+    }
+}
+
+function changePosition(element) {
+    if(element.direction == 1) {
+        element.y -= snakeWidth;
+    }
+    else if(element.direction == 2) {
+        element.y += snakeWidth;
+    } 
+    else if(element.direction == 3) {
+        element.x -= snakeHeight;
+    }
+    else if(element.direction == 4) {
+        element.x += snakeHeight;
+    }
+}
+
+function changeDirection(element, index) {
+    if(index != 0) {
+        var previousElement = snake[index - 1];
+        element.direction = previousElement.direction;
+    }
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 100);
+</pre>
+
+<p>A questo punto potete vedere che abbiamo raggiunto il nostro obbiettivo.</p>
+
+<p>Quello che ci rimane da fare è fare in modo che la collision con il cibo sia considerata solo quando è la testa (in ogni caso non sarebbe possibile che collida con un altro pezzo) collida con il cibo.</p>
+
+<pre>function checkCollisionWithFood() {
+    if((snake[0].x - precision &lt; foodX  &amp;&amp; foodX &lt; snake[0].x + precision) &amp;&amp; (snake[0].y - precision &lt; foodY &amp;&amp; foodY &lt; snake[0].y + precision)) {
+        foodX = Math.floor(Math.random() * canvas.width - 5) + 1;
+        foodY = Math.floor(Math.random() * canvas.height - 5) + 1;
+        score++;
+    }
+}</pre>
+
+<p>A questo punto ci resta solo da aggiungere un pezzo al nostro serpente ogni qualvolta mangi il cibo. Per fare questo aggiungiamo un oggetto alla fine dell’array che identifica il serpente.</p>
+
+<pre>function checkCollisionWithFood() {
+    if((snake[0].x - precision &lt; foodX  &amp;&amp; foodX &lt; snake[0].x + precision) &amp;&amp; (snake[0].y - precision &lt; foodY &amp;&amp; foodY &lt; snake[0].y + precision)) {
+        foodX = Math.floor(Math.random() * canvas.width - 5) + 1;
+        foodY = Math.floor(Math.random() * canvas.height - 5) + 1;
+        var lastElement = snake[snake.length - 1];
+        switch(lastElement.direction) {
+            case 1:
+                snake.push({x: lastElement.x, y: lastElement.y + snakeHeight, direction: lastElement.direction});
+                break;
+            case 2:
+                snake.push({x: lastElement.x, y: lastElement.y - snakeHeight, direction: lastElement.direction});
+                break;
+            case 3:
+                snake.push({x: lastElement.x + snakeWidth, y: lastElement.y, direction: lastElement.direction});
+                break;
+            case 4:
+                snake.push({x: lastElement.x - snakeWidth, y: lastElement.y, direction: lastElement.direction});
+                break;
+        }
+        score++;
+    }
+}</pre>
+
+<p>Lo switch serve per fare in modo di aggiungere il pezzo del serpente nella posizione giusta in base a quale sia la sua attuale direzione. Se l’ultimo pezzo del serpente si muove da sinistra verso destra dovremo aggiungere il pezzo in fondo a sinistra, e così via.</p>
+
+<p>Pensate che siamo arrivati alla fine? E invece no.<br />
+Abbiamo ancora due problemi. Se stiamo andando da sinistra verso destra, al momento, possiamo muoverci verso sinistra e andare nella direzione opposta, ottenendo così la sovrapposizione di alcuni pezzi.<br />
+Il secondo problema è verificare oltre che la collisione con in bordi anche la collisione con il serpente stesso in modo da fare il restart() della partita anche in questo caso.</p>
+
+<p>Partiamo con il primo problema.<br />
+Per questo aggiungiamo semplicemente una funzione canChangeDirection() in modo che se il serpente sta andando verso l’alto (1) non potrà cambiare la sua posizione verso il basso (2).</p>
+
+<pre>function canChangeDirection(newDirection) {
+    if(newDirection === false) {
+        return false;
+    }
+
+    if((newDirection == 1 &amp;&amp; snake[0].direction != 2) || (newDirection == 2 &amp;&amp; snake[0].direction != 1) || (newDirection == 3 &amp;&amp; snake[0].direction != 4) || (newDirection == 4 &amp;&amp; snake[0].direction != 3)) {
+        return true;
+    }
+
+    return false;
+}</pre>
+
+<p>Ci basta a questo punto integrare questa funzione dove cambiamo la direzione del serpente, ovvero nella funzione keyDownHandler (il nostro evento di click dei tasti della tastiera).</p>
+
+<pre>function keyDownHandler(e) {
+    var newDirection = false;
+    if(e.keyCode == 37) {
+        newDirection = 3;
+    } 
+    else if(e.keyCode == 38) {
+        newDirection = 1;
+    } 
+    else if(e.keyCode == 39) {
+        newDirection = 4;
+    } 
+    else if(e.keyCode == 40) {
+        newDirection = 2;
+    }
+    if(canChangeDirection(newDirection)) {
+        snake[0].direction = newDirection;
+    }
+}</pre>
+
+<p>In questo modo cambiamo la direzione al primo pezzo del serpente (i successivi verranno modificati in base alla direzione del precedente pezzo) solo se questo può farlo.</p>
+
+<p>A questo punto per risolvere il problema numero 2 ci basta creare una funzione checkCollisionWithSnake() per verificare se la testa del serpente sta collidendo con un suo qualsiasi altro pezzo.</p>
+
+<pre>function checkCollisionWithSnake() {
+    var x = snake[0].x;
+    var y = snake[0].y;
+    var collision = false;
+
+    snake.forEach(function(element, index){
+        if(index != 0) {
+            if(element.x == x &amp;&amp; element.y == y) {
+                collision = true;
+            }
+        }
+    })
+
+    if(collision) {
+        restart();
+    }
+}</pre>
+
+<p>Semplicemente cicliamo su tutti i pezzi del serpente e verifichiamo che nessuno stia collidendo con la testa.<br />
+In caso di collisione chiamiamo la funzione restart() in quanto abbiamo perso!</p>
+
+<p>Questo è tutto, finalmente abbiamo finito.<br />
+Qui sotto c’è il codice finale che potete trovare anche su <a href="https://github.com/iskyd/snakejs">github</a>.</p>
+
+<pre>var canvas = document.getElementById("snake");
+var ctx = canvas.getContext("2d");
+var snake = [ {x: canvas.width/2, y: canvas.height-30, direction: 1}, {x: canvas.width/2, y: canvas.height-20, direction: 1}, {x: canvas.width/2, y: canvas.height-10, direction: 1} ]
+var snakeHeight = 10;
+var snakeWidth = 10;
+var foodHeight = 10;
+var foodWidth = 10;
+var foodX = Math.floor(Math.random() * canvas.width - foodWidth) + 1;
+var foodY = Math.floor(Math.random() * canvas.height - foodHeight) + 1;
+var score = 0;
+var precision = 10;
+
+function keyDownHandler(e) {
+    var newDirection = false;
+    if(e.keyCode == 37) {
+        newDirection = 3;
+    } 
+    else if(e.keyCode == 38) {
+        newDirection = 1;
+    } 
+    else if(e.keyCode == 39) {
+        newDirection = 4;
+    } 
+    else if(e.keyCode == 40) {
+        newDirection = 2;
+    }
+    if(canChangeDirection(newDirection)) {
+        snake[0].direction = newDirection;
+    }
+}
+
+function drawSnake(element) {
+    ctx.beginPath();
+    ctx.rect(element.x, element.y, snakeWidth, snakeHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function drawFood() {
+    ctx.beginPath();
+    ctx.rect(foodX, foodY, foodWidth, foodHeight);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#b6b3b3";
+    ctx.fillText("Score: "+score, 8, 20);
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snake.forEach(function(element, index){
+        changePosition(element);
+        drawSnake(element);
+    })
+    checkCollision();
+    checkCollisionWithFood();
+    checkCollisionWithSnake();
+    drawFood();
+    drawScore();
+    for(var i = snake.length - 1; i &gt;= 0; i--) {
+        changeDirection(snake[i], i);
+    }
+}
+
+function changePosition(element) {
+    if(element.direction == 1) {
+        element.y -= snakeWidth;
+    }
+    else if(element.direction == 2) {
+        element.y += snakeWidth;
+    } 
+    else if(element.direction == 3) {
+        element.x -= snakeHeight;
+    }
+    else if(element.direction == 4) {
+        element.x += snakeHeight;
+    }
+}
+
+function changeDirection(element, index) {
+    if(index != 0) {
+        var previousElement = snake[index - 1];
+        element.direction = previousElement.direction;
+    }
+}
+
+function canChangeDirection(newDirection) {
+    if(newDirection === false) {
+        return false;
+    }
+
+    if((newDirection == 1 &amp;&amp; snake[0].direction != 2) || (newDirection == 2 &amp;&amp; snake[0].direction != 1) || (newDirection == 3 &amp;&amp; snake[0].direction != 4) || (newDirection == 4 &amp;&amp; snake[0].direction != 3)) {
+        return true;
+    }
+
+    return false;
+}
+
+function checkCollision() {
+    if(snake[0].y &gt; canvas.height || snake[0].y &lt; 0 || snake[0].x &lt; 0 || snake[0].x &gt; canvas.width) {
+        restart();
+    }
+}
+
+function checkCollisionWithFood() {
+    if((snake[0].x - precision &lt; foodX  &amp;&amp; foodX &lt; snake[0].x + precision) &amp;&amp; (snake[0].y - precision &lt; foodY &amp;&amp; foodY &lt; snake[0].y + precision)) {
+        foodX = Math.floor(Math.random() * canvas.width - 5) + 1;
+        foodY = Math.floor(Math.random() * canvas.height - 5) + 1;
+        var lastElement = snake[snake.length - 1];
+        switch(lastElement.direction) {
+            case 1:
+                snake.push({x: lastElement.x, y: lastElement.y + snakeHeight, direction: lastElement.direction});
+                break;
+            case 2:
+                snake.push({x: lastElement.x, y: lastElement.y - snakeHeight, direction: lastElement.direction});
+                break;
+            case 3:
+                snake.push({x: lastElement.x + snakeWidth, y: lastElement.y, direction: lastElement.direction});
+                break;
+            case 4:
+                snake.push({x: lastElement.x - snakeWidth, y: lastElement.y, direction: lastElement.direction});
+                break;
+        }
+        console.log(snake.length);
+        score++;
+    }
+}
+
+function checkCollisionWithSnake() {
+    var x = snake[0].x;
+    var y = snake[0].y;
+    var collision = false;
+
+    snake.forEach(function(element, index){
+        if(index != 0) {
+            if(element.x == x &amp;&amp; element.y == y) {
+                collision = true;
+            }
+        }
+    })
+
+    if(collision) {
+        restart();
+    }
+}
+
+function restart() {
+    snake = [ {x: canvas.width/2, y: canvas.height-30, direction: 1}, {x: canvas.width/2, y: canvas.height-20, direction: 1}, {x: canvas.width/2, y: canvas.height-10, direction: 1} ];
+    foodX = Math.floor(Math.random() * canvas.width - foodWidth) + 1;
+    foodY = Math.floor(Math.random() * canvas.height - foodHeight) + 1;
+    score = 0;
+}
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+var interval = setInterval(draw, 100);</pre>
+
+<p>In sole 161 righe abbiamo scritto, in modo semplice, snake.<br />
+Vi invito a modificare il codice in modo da prendere più confidenza con quello che abbiamo fatto.<br />
+Vi consiglio anche di aggiungere qualche abbellimento all’interno del gioco in modo da capire in modo più approfondito come il tutto funziona.</p>
+
+<p><em>Potete ad esempio fare in modo che il cibo resti in quella posizione solo per 10 secondi, dopodichè si sposterà in un altro posto random.</em></p>
+
+<p>Per qualsiasi dubbio, curiosità, suggerimenti, correzioni o per farmi sapere cosa ne pensate non esitate a <strong>commentare qua sotto</strong>!</p>
+
+  </div><a class="u-url" href="/programmazione/2018/10/10/snake-pure-js.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Isky – Musica e Tech</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Isky – Musica e Tech</li><li><a class="u-email" href="mailto:careddumattia@gmail.com">careddumattia@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/iskyd"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">iskyd</span></a></li><li><a href="https://www.twitter.com/iskypitts"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">iskypitts</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

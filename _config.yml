@@ -30,6 +30,7 @@ github_username:  iskyd
 # Build settings
 theme: minima
 plugins:
+  - jekyll-paginate
   - jekyll-feed
 
 # Exclude from processing.
